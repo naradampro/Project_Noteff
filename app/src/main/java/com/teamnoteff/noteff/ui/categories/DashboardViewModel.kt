@@ -1,4 +1,4 @@
-package com.teamnoteff.noteff.ui.dashboard
+package com.teamnoteff.noteff.ui.categories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

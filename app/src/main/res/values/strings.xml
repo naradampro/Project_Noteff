@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Noteff</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="bnav_txt_home">Home</string>
+    <string name="bnav_txt_categories">Categories</string>
+    <string name="bnav_txt_notes">Notes</string>
+    <string name="bnav_txt__menu">Menu</string>
 </resources>

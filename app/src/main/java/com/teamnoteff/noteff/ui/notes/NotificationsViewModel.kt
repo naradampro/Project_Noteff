@@ -1,4 +1,4 @@
-package com.teamnoteff.noteff.ui.notifications
+package com.teamnoteff.noteff.ui.notes
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
