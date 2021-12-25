@@ -36,6 +36,10 @@
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layout/fragment_notifications.xml" value="0.12708333333333333" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note_popup.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/remove_popup.xml" value="0.25" />
       </map>
     </option>
   </component>
