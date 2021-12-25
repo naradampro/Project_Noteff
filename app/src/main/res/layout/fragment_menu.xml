@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="344dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="168dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue_default"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imUProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="35dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_image"
+                app:riv_corner_radius="50dp" />
+
+            <TextView
+                android:id="@+id/UName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kasun Kalhara"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:text="kasunkalhara@gmail.com"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="344dp"
+            android:layout_margin="2dp">
+
+            <ImageButton
+                android:id="@+id/btnAppSettings"
+                android:layout_width="74dp"
+                android:layout_height="79dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/ic_app_settings" />
+
+
+            <ImageButton
+                android:id="@+id/btnHelp"
+                android:layout_width="74dp"
+                android:layout_height="79dp"
+                android:layout_below="@id/btnAppSettings"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/ic_help" />
+
+            <ImageButton
+                android:id="@+id/btnAccount"
+                android:layout_width="74dp"
+                android:layout_height="79dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/ic_account" />
+
+            <ImageButton
+                android:id="@+id/btnAboutUs"
+                android:layout_width="74dp"
+                android:layout_height="79dp"
+                android:layout_below="@id/btnAppSettings"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/ic_about_us" />
+
+            <TextView
+                android:id="@+id/tvAppSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAppSettings"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
+                android:text="App Settings"
+                android:textColor="@color/grey_v1"/>
+
+            <TextView
+                android:id="@+id/tvAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAppSettings"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="10dp"
+                android:text="Account"
+                android:textColor="@color/grey_v1"/>
+
+            <TextView
+                android:id="@+id/tvHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnHelp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Help"
+                android:textColor="@color/grey_v1" />
+
+            <TextView
+                android:id="@+id/tvAboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAboutUs"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="10dp"
+                android:text="About Us"
+                android:textColor="@color/grey_v1"/>
+
+            <!--button for dismissing our dialog-->
+
+
+            <ImageButton
+                android:id="@+id/idBtnDismiss1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#55FFFFFF"
+                android:clickable="true"
+                android:textAllCaps="false"
+                app:srcCompat="@drawable/ic_close" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
