@@ -16,12 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <!-- section of profile details -->
         <LinearLayout
             android:layout_width="168dp"
             android:layout_height="match_parent"
             android:background="@color/blue_default"
             android:orientation="vertical">
 
+            <!-- profile image -->
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imUProfile"
                 android:layout_width="100dp"
@@ -31,6 +33,7 @@
                 android:src="@drawable/profile_image"
                 app:riv_corner_radius="50dp" />
 
+            <!--user name-->
             <TextView
                 android:id="@+id/UName"
                 android:layout_width="match_parent"
@@ -41,6 +44,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <!-- Email -->
             <TextView
                 android:id="@+id/UEmail"
                 android:layout_width="match_parent"
@@ -52,6 +56,7 @@
                 android:textSize="10sp" />
         </LinearLayout>
 
+        <!-- menu section -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="344dp"
