@@ -32,6 +32,13 @@ android {
     buildFeatures {
         viewBinding true
     }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res', 'src\\main\\res\\layouts\\startup_process', 'src\\main\\res\\layouts\\create_categories_and_notes', 'src\\main\\res\\layouts\\view_and_modify_notes', 'src\\main\\res\\layouts\\menu_settings'
+            }
+        }
+    }
 }
 
 dependencies {
