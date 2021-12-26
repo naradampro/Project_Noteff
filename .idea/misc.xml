@@ -41,6 +41,17 @@
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note_popup.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/remove_popup.xml" value="0.25" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/category_button.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/change_button.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/create_button.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/segment_button.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/textview_border.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/create_note.xml" value="0.264" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/data_segments_add_popup.xml" value="0.1094853683148335" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/app_settings.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layouts/startup_process/layout/confirm_pin.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.18432971014492755" />
       </map>
     </option>
   </component>

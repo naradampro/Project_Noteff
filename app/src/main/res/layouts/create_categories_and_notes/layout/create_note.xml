@@ -1,6 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+<Button
+    android:id="@+id/btn_small"
+    android:layout_width="150dp"
+    android:layout_height="40dp"
+    android:layout_marginBottom="84dp"
+    android:background="@drawable/create_button"
+    android:text="CREATE"
+    android:textAllCaps="false"
+    android:textColor="#FFFFFF"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<Button
+    android:id="@+id/btn_show_popup"
+    android:layout_width="180dp"
+    android:layout_height="30dp"
+    android:layout_marginBottom="312dp"
+    android:background="@drawable/segment_button"
+    android:text="Add A Data Segment  +"
+    android:textAllCaps="false"
+    android:textColor="#286DE7"
+    android:textSize="14dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.497"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/textInputEditText"
+    android:layout_width="325dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/textview_border"
+    android:hint="   Enter record title "
+    android:textSize="14dp"
+    app:layout_constraintBottom_toTopOf="@+id/textInputEditText2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.552"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/textInputEditText2"
+    android:layout_width="325dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="376dp"
+    android:background="@drawable/textview_border"
+    android:hint="   Display Text "
+    android:textSize="14dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<Button
+    android:id="@+id/button6"
+    android:layout_width="110dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="110dp"
+    android:layout_marginBottom="116dp"
+    android:background="@drawable/category_button"
+    android:backgroundTint="@drawable/change_button"
+    android:text="Existing"
+    android:textAllCaps="false"
+    android:textColor="#9B9B9B"
+    android:textSize="14dp"
+    app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+    app:layout_constraintEnd_toStartOf="@+id/button7"
+    app:layout_constraintHorizontal_bias="0.827"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<Button
+    android:id="@+id/button7"
+    android:layout_width="90dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="150dp"
+    android:layout_marginBottom="116dp"
+    android:background="@drawable/category_button"
+    android:backgroundTint="@drawable/change_button"
+    android:text="New"
+    android:textAllCaps="false"
+    android:textColor="#9B9B9B"
+    android:textSize="14dp"
+    app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+    app:layout_constraintEnd_toStartOf="@+id/button8"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<Button
+    android:id="@+id/button8"
+    android:layout_width="116dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="260dp"
+    android:layout_marginEnd="110dp"
+    android:layout_marginBottom="116dp"
+    android:background="@drawable/category_button"
+    android:backgroundTint="@drawable/change_button"
+    android:text="Uncategorized"
+    android:textAllCaps="false"
+    android:textColor="#9B9B9B"
+    android:textSize="14dp"
+    app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.32"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="100dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="100dp"
+    android:layout_marginBottom="5dp"
+    android:text="Category"
+    android:textSize="16sp"
+    android:textColor="#9B9B9B"
+    app:layout_constraintBottom_toTopOf="@+id/button6"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.012"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button3"
+    app:layout_constraintVertical_bias="0.846" />
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:menu="@menu/bottom_nav_menu"
+    app:itemTextColor="#286DE7"/>
+
+<Button
+    android:id="@+id/button3"
+    android:layout_width="411dp"
+    android:layout_height="48dp"
+    android:background="#286DE7"
+    android:text="Create Your New Record"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/textView9"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="80dp"
+    android:layout_marginTop="36dp"
+    android:layout_marginEnd="219dp"
+    android:layout_marginBottom="61dp"
+    android:text="Uncategorized record"
+    android:textColor="#9B9B9B"
+    android:textSize="14dp"
+    app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.652"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button6"
+    app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
