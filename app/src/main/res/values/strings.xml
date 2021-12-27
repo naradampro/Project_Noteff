@@ -11,5 +11,16 @@
     <!--change_default_note_popup.xml-->-->
     <string name="note_title">Note title</string>
     <string name="note_display_text">Display text</string>
+    <string name="ds_title">Select data segments</string>
+    <string name="take_photo">Take photo</string>
+    <string name="upload_image">Upload image</string>
+    <string name="link">Link</string>
+    <string name="plain_text">Plain text</string>
+    <string name="phone_number">Phone number</string>
+    <string name="important">Important</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="add_button">Add</string>
+    <string name="enter_phone_num">Enter phone number</string>
+    <string name="enter_text">Enter your text.....</string>
 
 </resources>
