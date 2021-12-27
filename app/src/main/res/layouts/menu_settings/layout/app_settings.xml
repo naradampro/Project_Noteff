@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="20dp"
+            android:layout_marginStart="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set your new password"
+            android:textColor="#BDBDBD"
+            android:textSize="14dp"
+            android:layout_marginStart="36dp"
+            android:textStyle="bold"/>
+
+        <!--Text Input field for current password-->
+        <com.google.android.material.textfield.TextInputLayout
+            app:endIconMode="password_toggle"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCPwdText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Current Password"
+                android:maxLength="12"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Text Input field for new password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconMode="password_toggle"
+            app:counterEnabled="true"
+            app:counterMaxLength="12">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNPwdText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="New Password"
+                android:maxLength="12"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Text Input field for confirm new password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconMode="password_toggle"
+            app:counterEnabled="true"
+            app:counterMaxLength="12">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCNPwdText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:maxLength="12"
+                android:hint="Confirm New Password"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Update "
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
