@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable-v24/ic_lock.xml" value="0.26614583333333336" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable-v24/numbers.xml" value="0.26614583333333336" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable/category_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable/change_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable/create_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/drawable/textview_border.xml" value="0.26614583333333336" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.18297101449275363" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_home.xml" value="0.18297101449275363" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_menu.xml" value="0.18297101449275363" />
@@ -16,7 +22,7 @@
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/add_pin.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/confirm_pin.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/set_password.xml" value="0.1634963768115942" />
-        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/welcome_page.xml" value="0.59375" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/welcome_page.xml" value="0.264" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note_popup.xml" value="0.14990942028985507" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.1634963768115942" />
