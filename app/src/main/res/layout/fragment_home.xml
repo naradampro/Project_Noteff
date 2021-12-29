@@ -138,13 +138,14 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="170dp"
-        android:background="#55FFFFFF"
-        android:clickable="true"
-        android:src="@drawable/ic_plus_circle" />
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop="220dp"
+        app:backgroundTint="@color/blue_default"
+        android:id="@+id/floating_action_button"
+        app:srcCompat="@drawable/ic_plus"
+        android:layout_width="wrap_content"
+        app:tint="@android:color/white"/>
 
 </LinearLayout>
