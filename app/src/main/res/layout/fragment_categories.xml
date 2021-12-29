@@ -11,7 +11,7 @@
         android:id="@+id/searchBar"
         style="@style/MaterialSearchBarLight"
         app:mt_speechMode="true"
-        app:mt_hint="Enter note to search"
+        app:mt_hint="Enter category to search"
         app:mt_maxSuggestionsCount="10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

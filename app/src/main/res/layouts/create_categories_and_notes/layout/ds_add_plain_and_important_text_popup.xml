@@ -28,7 +28,9 @@
             android:id="@+id/etNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:hint="@string/enter_text"/>
+            android:hint="@string/enter_text"
+            android:gravity="top"
+            android:inputType="textMultiLine"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

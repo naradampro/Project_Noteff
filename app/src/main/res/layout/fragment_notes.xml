@@ -23,7 +23,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="148dp"
-        android:background="#F2F2F2"
         android:orientation="vertical">
 
         <TextView
@@ -53,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="267dp"
         android:background="#55FFFFFF"
         android:clickable="true"
         android:src="@drawable/ic_plus_circle" />

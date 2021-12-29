@@ -58,15 +58,24 @@
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_important.xml" value="0.26614583333333336" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_link.xml" value="0.26614583333333336" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_notes.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/create_note.xml" value="0.2" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/data_segments_display_popup.xml" value="0.12158054711246201" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/ds_add_link_popup.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/ds_add_phone_number_popup.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/ds_add_plain_and_important_text_popup.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/about_us.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/account.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/app_settings.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/startup_process/layout/add_pin.xml" value="0.24739583333333334" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note_popup.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/modify_remove_note.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/remove_popup.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/view_note.xml" value="0.25" />
         <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/category_button.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/change_button.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/asus/Documents/GitHub/Project_Noteff/app/src/main/res/drawable/create_button.xml" value="0.24635416666666668" />

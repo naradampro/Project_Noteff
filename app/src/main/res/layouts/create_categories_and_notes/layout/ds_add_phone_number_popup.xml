@@ -28,7 +28,8 @@
             android:id="@+id/etNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_phone_num"/>
+            android:hint="@string/enter_phone_num"
+            android:inputType="phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
