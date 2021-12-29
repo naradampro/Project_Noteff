@@ -1,21 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_default"
+    android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_default"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_noteff"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="-40dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imUProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_image"
+                app:riv_corner_radius="50dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi! Mr.Kasun Kalhara"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/searchBar"
+            style="@style/MaterialSearchBarLight"
+            app:mt_speechMode="true"
+            app:mt_hint="Enter note to search"
+            app:mt_maxSuggestionsCount="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mt_searchBarColor="#E3E9F9"
+            app:mt_roundedSearchBarEnabled="true"
+            android:layout_marginBottom="10dp"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:orientation="vertical"
+        android:background="#F2F2F2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"/>
+
+            <Button
+                android:id="@+id/btnViewAll_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:textSize="11dp"
+                android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#9B9B9B"
+                android:textColor="#9B9B9B"
+                app:icon="@drawable/ic_arrow_drop_down"
+                app:iconTint="#9B9B9B"
+                app:iconGravity="end"
+                android:backgroundTint="#ffffff"
+                android:layout_marginStart="175dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recently accessed notes"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"/>
+
+            <Button
+                android:id="@+id/btnViewAll_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All"
+                android:textSize="11dp"
+                android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#9B9B9B"
+                android:textColor="#9B9B9B"
+                app:icon="@drawable/ic_arrow_drop_down"
+                app:iconTint="#9B9B9B"
+                app:iconGravity="end"
+                android:layout_marginStart="86dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_noteff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:background="#55FFFFFF"
+        android:clickable="true"
+        android:src="@drawable/ic_plus_circle" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
