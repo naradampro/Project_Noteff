@@ -22,4 +22,10 @@
         android:name="com.teamnoteff.noteff.ui.notes.NotesFragment"
         android:label="@string/bnav_txt_notes"
         tools:layout="@layout/fragment_notes" />
+
+    <dialog
+        android:id="@+id/navigation_menu"
+        android:name="com.teamnoteff.noteff.ui.menu.MenuFragment"
+        android:label="bnav_txt_menu"
+        tools:layout="@layout/fragment_menu2" />
 </navigation>

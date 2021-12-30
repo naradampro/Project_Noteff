@@ -3,7 +3,7 @@
     <string name="bnav_txt_home">Home</string>
     <string name="bnav_txt_categories">Categories</string>
     <string name="bnav_txt_notes">Notes</string>
-    <string name="bnav_txt__menu">Menu</string>
+    <string name="bnav_txt_menu">Menu</string>
 
     <!--remove_popup.xml-->-->
     <string name="text">After deleting this segment, it will not be able to restore again. Are you sure to continue deleting?</string>
@@ -22,5 +22,7 @@
     <string name="add_button">Add</string>
     <string name="enter_phone_num">Enter phone number</string>
     <string name="enter_text">Enter your text.....</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
