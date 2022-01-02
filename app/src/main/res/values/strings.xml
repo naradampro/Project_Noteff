@@ -5,10 +5,10 @@
     <string name="bnav_txt_notes">Notes</string>
     <string name="bnav_txt_menu">Menu</string>
 
-    <!--remove_popup.xml-->-->
+    <!--remove_dialog_fragment.xml-->-->
     <string name="text">After deleting this segment, it will not be able to restore again. Are you sure to continue deleting?</string>
 
-    <!--change_default_note_popup.xml-->-->
+    <!--change_note_fragment.xml-->-->
     <string name="note_title">Note title</string>
     <string name="note_display_text">Display text</string>
     <string name="ds_title">Select data segments</string>

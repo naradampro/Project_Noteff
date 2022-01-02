@@ -7,25 +7,49 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.teamnoteff.noteff.ui.home.HomeFragment"
+        android:name="com.teamnoteff.noteff.ui.common.HomeFragment"
         android:label="@string/bnav_txt_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home_fragment" />
 
     <fragment
         android:id="@+id/navigation_categories"
-        android:name="com.teamnoteff.noteff.ui.categories.CategoriesFragment"
+        android:name="com.teamnoteff.noteff.ui.common.CategoriesFragment"
         android:label="@string/bnav_txt_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/categories_fragment" />
 
     <fragment
         android:id="@+id/navigation_notes"
-        android:name="com.teamnoteff.noteff.ui.notes.NotesFragment"
+        android:name="com.teamnoteff.noteff.ui.common.NotesFragment"
         android:label="@string/bnav_txt_notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/notes_fragment" />
 
     <dialog
         android:id="@+id/navigation_menu"
-        android:name="com.teamnoteff.noteff.ui.menu.MenuFragment"
+        android:name="com.teamnoteff.noteff.ui.common.MenuFragment"
         android:label="bnav_txt_menu"
-        tools:layout="@layout/fragment_menu2" />
+        tools:layout="@layout/menu_fragment" >
+
+        <action
+            android:id="@+id/action_navigation_menu_to_accountFragment"
+            app:destination="@id/accountFragment" />
+
+        <action
+            android:id="@+id/action_navigation_menu_to_appSettingsFragment"
+            app:destination="@id/appSettingsFragment" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.teamnoteff.noteff.ui.common.AccountFragment"
+        android:label="account_fragment"
+        tools:layout="@layout/account_fragment" />
+
+    <fragment
+        android:id="@+id/appSettingsFragment"
+        android:name="com.teamnoteff.noteff.ui.common.AppSettingsFragment"
+        android:label="AppSettingsFragment"
+        tools:layout="@layout/app_settings_fragment" />
+
+    />
 </navigation>
