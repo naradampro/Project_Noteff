@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.teamnoteff.noteff.ui.common.HomeFragment"
         android:label="@string/bnav_txt_home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_nav_create"
+            app:destination="@id/nav_create" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_categories"
@@ -51,5 +55,6 @@
         android:label="AppSettingsFragment"
         tools:layout="@layout/app_settings_fragment" />
 
-    />
+    <include app:graph="@navigation/nav_create" />
+
 </navigation>

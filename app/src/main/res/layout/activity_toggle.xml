@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.create.ToggleActivity">
+
+
+        <!--Toggle Button Group-->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnExisting"
+                style="?attr/materialButtonOutlinedStyle"
+                android:backgroundTint="#F2F2F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Existing"
+                android:textSize="14dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btnNew"
+                style="?attr/materialButtonOutlinedStyle"
+                android:backgroundTint="#F2F2F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New"
+                android:textSize="14dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btnUncategorized"
+                style="?attr/materialButtonOutlinedStyle"
+                android:backgroundTint="#F2F2F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uncategorized"
+                android:textSize="14dp"
+                android:textAllCaps="false"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <FrameLayout
+        android:id="@+id/toggle_fragments_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"/>
+
+
+
+</LinearLayout>
