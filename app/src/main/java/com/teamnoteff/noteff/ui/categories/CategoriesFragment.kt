@@ -12,7 +12,7 @@ import com.teamnoteff.noteff.databinding.FragmentCategoriesBinding
 
 class CategoriesFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var categoriesViewModel: CategoriesViewModel
     private var _binding: FragmentCategoriesBinding? = null
 
     // This property is only valid between onCreateView and
@@ -24,14 +24,14 @@ class CategoriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        categoriesViewModel =
+            ViewModelProvider(this).get(CategoriesViewModel::class.java)
 
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        categoriesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

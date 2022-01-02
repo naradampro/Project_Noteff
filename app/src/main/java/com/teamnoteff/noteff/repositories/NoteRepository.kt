@@ -22,5 +22,4 @@ class NoteRepository(private val dao: NoteDao) {
     suspend fun deleteAll(note: Note):Int {
         return dao.deleteAll()
     }
-
 }

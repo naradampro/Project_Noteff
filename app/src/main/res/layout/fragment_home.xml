@@ -113,7 +113,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recently accessed notes"
+                android:text="@string/recently_accessed_notes"
                 android:textStyle="bold"
                 android:layout_marginStart="20dp"/>
 
@@ -121,7 +121,7 @@
                 android:id="@+id/btnViewAll_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View All"
+                android:text="@string/view_all"
                 android:textSize="11dp"
                 android:textAllCaps="false"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"

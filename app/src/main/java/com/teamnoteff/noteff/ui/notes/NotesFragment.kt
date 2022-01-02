@@ -12,7 +12,7 @@ import com.teamnoteff.noteff.databinding.FragmentNotesBinding
 
 class NotesFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var notesViewModel: NotesViewModel
     private var _binding: FragmentNotesBinding? = null
 
     // This property is only valid between onCreateView and
@@ -24,14 +24,14 @@ class NotesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        notesViewModel =
+            ViewModelProvider(this).get(NotesViewModel::class.java)
 
         _binding = FragmentNotesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        notesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
