@@ -14,7 +14,8 @@ import com.teamnoteff.noteff.entities.*
         NoteCategory::class,
         DataSegmentType::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class NoteffDatabase: RoomDatabase() {
 

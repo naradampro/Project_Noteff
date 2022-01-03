@@ -4,22 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.teamnoteff.noteff.R
-import kotlinx.android.synthetic.main.activity_toggle.*
-// databinding is reqiured to use instead of this
+import com.teamnoteff.noteff.databinding.ActivityToggleBinding
 
 class ToggleActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityToggleBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_toggle)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_toggle)
 
         //attach the existing fragment
         supportFragmentManager.beginTransaction()
             .add(R.id.toggle_fragments_container,ExistingFragment())
             .commit()
 
-        toggleButton.addOnButtonCheckedListener { toggleButton, checkedId, isChecked ->
+        binding.toggleButton.addOnButtonCheckedListener { toggleButton, checkedId, isChecked ->
 
             if(isChecked){
                 when(checkedId){
