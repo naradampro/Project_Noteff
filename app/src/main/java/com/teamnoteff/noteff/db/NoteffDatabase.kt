@@ -4,9 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
+import com.teamnoteff.noteff.entities.*
 
 
-@Database(entities = [], version = 1)
+@Database(
+    entities =
+    [
+        Note::class,
+        NoteCategory::class,
+        DataSegmentType::class
+    ],
+    version = 1
+)
 abstract class NoteffDatabase: RoomDatabase() {
 
     companion object{
