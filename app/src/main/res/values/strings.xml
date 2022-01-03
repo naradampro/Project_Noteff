@@ -3,5 +3,30 @@
     <string name="bnav_txt_home">Home</string>
     <string name="bnav_txt_categories">Categories</string>
     <string name="bnav_txt_notes">Notes</string>
-    <string name="bnav_txt__menu">Menu</string>
+    <string name="bnav_txt_menu">Menu</string>
+
+    <!--remove_dialog_fragment.xml-->-->
+    <string name="text">After deleting this segment, it will not be able to restore again. Are you sure to continue deleting?</string>
+
+    <!--change_note_fragment.xml-->-->
+    <string name="note_title">Note title</string>
+    <string name="note_display_text">Display text</string>
+    <string name="ds_title">Select data segments</string>
+    <string name="take_photo">Take photo</string>
+    <string name="upload_image">Upload image</string>
+    <string name="link">Link</string>
+    <string name="plain_text">Plain text</string>
+    <string name="phone_number">Phone number</string>
+    <string name="important">Important</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="add_button">Add</string>
+    <string name="enter_phone_num">Enter phone number</string>
+    <string name="enter_text">Enter your text.....</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_new_category_name">Enter new category name</string>
+    <string name="uncategorized_note">Uncategorized note</string>
+    <string name="recently_accessed_notes">Recently accessed notes</string>
+    <string name="view_all">View All</string>
+
 </resources>

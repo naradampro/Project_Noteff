@@ -19,6 +19,6 @@
     <item
         android:id="@+id/navigation_menu"
         android:icon="@drawable/bnav_ic_menu"
-        android:title="@string/bnav_txt__menu" />
+        android:title="@string/bnav_txt_menu" />
 
 </menu>
