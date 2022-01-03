@@ -44,6 +44,12 @@
         <action
             android:id="@+id/action_navigation_menu_to_appSettingsFragment"
             app:destination="@id/appSettingsFragment" />
+        <action
+            android:id="@+id/action_navigation_menu_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_navigation_menu_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
 
     </dialog>
 
@@ -61,5 +67,15 @@
 
     <include app:graph="@navigation/nav_create" />
     <include app:graph="@navigation/nav_updateview" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.teamnoteff.noteff.ui.common.HelpFragment"
+        android:label="help_fragment"
+        tools:layout="@layout/help_fragment" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.teamnoteff.noteff.ui.common.AboutUsFragment"
+        android:label="about_us_fragment"
+        tools:layout="@layout/about_us_fragment" />
 
 </navigation>
