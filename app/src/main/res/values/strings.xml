@@ -26,5 +26,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_new_category_name">Enter new category name</string>
     <string name="uncategorized_note">Uncategorized note</string>
+    <string name="recently_accessed_notes">Recently accessed notes</string>
+    <string name="view_all">View All</string>
 
 </resources>
