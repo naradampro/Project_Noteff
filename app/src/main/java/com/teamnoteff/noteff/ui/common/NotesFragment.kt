@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.teamnoteff.noteff.R
 
 class NotesFragment : Fragment() {
@@ -20,7 +24,15 @@ class NotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.notes_fragment, container, false)
+        val view = inflater.inflate(R.layout.notes_fragment, container, false)
+
+        val btnAdd : FloatingActionButton = view.findViewById(R.id.floating_action_button)
+
+        btnAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_notes_to_nav_create)
+        }
+
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

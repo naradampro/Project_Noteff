@@ -38,54 +38,7 @@
             android:orientation="vertical"
             android:layout_marginTop="40dp">
 
-            <!--Toggle Button Group-->
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:singleSelection="true"
-                android:layout_gravity="center_horizontal">
-
-                <Button
-                    android:id="@+id/btnExisting"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:backgroundTint="#F2F2F2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Existing"
-                    android:textSize="14dp"
-                    android:textAllCaps="false"/>
-
-                <Button
-                    android:id="@+id/btnNew"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:backgroundTint="#F2F2F2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New"
-                    android:textSize="14dp"
-                    android:textAllCaps="false"/>
-
-                <Button
-                    android:id="@+id/btnUncategorized"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:backgroundTint="#F2F2F2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Uncategorized"
-                    android:textSize="14dp"
-                    android:textAllCaps="false"/>
-
-            </com.google.android.material.button.MaterialButtonToggleGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Uncategorized note"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
-                android:textColor="#9B9B9B"/>
+            <include layout="@layout/activity_toggle"/>
 
         </LinearLayout>
 
@@ -126,6 +79,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnAddDS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add A Data Segment  +"

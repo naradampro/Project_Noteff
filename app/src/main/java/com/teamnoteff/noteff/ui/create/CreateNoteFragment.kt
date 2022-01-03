@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import com.teamnoteff.noteff.R
 
 class CreateNoteFragment : Fragment() {
@@ -20,7 +22,15 @@ class CreateNoteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.create_note_fragment, container, false)
+        val view = inflater.inflate(R.layout.create_note_fragment, container, false)
+
+        val button_addDS : Button = view.findViewById(R.id.btnAddDS)
+
+        button_addDS.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_createNoteFragment_to_dataSegmentFragment)
+        }
+
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

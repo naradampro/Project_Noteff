@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
 
-        /*val addNote = findViewById<FloatingActionButton>(R.id.floating_action_button)
+        val addNote = findViewById<FloatingActionButton>(R.id.floating_action_button)
 
-         addNote.setOnClickListener {
-            val i = Intent(this, CreateNoteActivity::class.java)
-            startActivity(i)
-        }*/
+//         addNote.setOnClickListener {
+//            val i = Intent(this, CreateNoteActivity::class.java)
+//            startActivity(i)
+//        }
     }
 }

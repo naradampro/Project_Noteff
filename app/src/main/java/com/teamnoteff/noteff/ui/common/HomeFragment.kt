@@ -27,9 +27,11 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.home_fragment, container, false)
 
         val btnAddNote: ImageButton = view.findViewById(R.id.floating_action_button)
-        btnAddNote.setOnClickListener{
 
+        btnAddNote.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_home_to_nav_create)
         }
+
 
         return view
     }

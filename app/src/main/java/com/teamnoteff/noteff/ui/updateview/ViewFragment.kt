@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import com.teamnoteff.noteff.R
 
 class ViewFragment : Fragment() {
@@ -20,7 +22,15 @@ class ViewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.view_fragment, container, false)
+        val view = inflater.inflate(R.layout.view_fragment, container, false)
+
+        val btnModify : Button = view.findViewById(R.id.btnModify)
+
+        btnModify.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_viewFragment_to_modifyOrRemoveFragment)
+        }
+
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
