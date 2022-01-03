@@ -15,4 +15,6 @@ class Note (
 
     @ColumnInfo(name = "display_text")
     val displaytext: String
-)
+){
+    //val dataSegments:List<DataSegment>()
+}
