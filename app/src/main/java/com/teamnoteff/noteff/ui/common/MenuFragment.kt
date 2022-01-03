@@ -37,6 +37,17 @@ class MenuFragment : BottomSheetDialogFragment() {
             findNavController().navigate(R.id.action_navigation_menu_to_accountFragment)
         }
 
+        val btnAboutUs: ImageButton = view.findViewById(R.id.btnAboutUs)
+        btnAboutUs.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_menu_to_aboutUsFragment)
+        }
+
+        val btnHelp: ImageButton = view.findViewById(R.id.btnHelp)
+
+        btnHelp.setOnClickListener{
+            findNavController().navigate(R.id.action_navigation_menu_to_helpFragment)
+        }
+
         return view
     }
 
