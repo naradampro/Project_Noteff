@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_margin="10dp"
+                    android:text="My asus vivo book warranty card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDisplay"
+                    android:layout_margin="10dp"
+                    android:text="Exp date 2021.12.22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtCategory"
+                    android:layout_margin="10dp"
+                    android:text="My warranty cards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_category"
+                android:id="@+id/imgCategory"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
