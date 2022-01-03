@@ -23,9 +23,9 @@ class HelpFragment : Fragment() {
         return inflater.inflate(R.layout.help_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HelpViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[HelpViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

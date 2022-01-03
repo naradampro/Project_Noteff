@@ -24,8 +24,8 @@ class WelcomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.welcome_fragment, container, false)
 
-        val btnstart: ImageButton = view.findViewById(R.id.btnStart)
-        btnstart.setOnClickListener{
+        val btnStart: ImageButton = view.findViewById(R.id.btnStart)
+        btnStart.setOnClickListener{
             findNavController().navigate(R.id.action_welcomeFragment_to_setPasswordFragment)
         }
 
@@ -33,9 +33,9 @@ class WelcomeFragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[WelcomeViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

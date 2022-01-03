@@ -25,7 +25,7 @@ class PhoneNumberFragment : DialogFragment() {
         val view = inflater.inflate(R.layout.phone_number_fragment, container, false)
 
         //the popup does not close when touched outside the popup
-        setCancelable(false)
+        isCancelable = false
 
         //to close popup
         val close: ImageButton = view.findViewById(R.id.imgBtnClose)
@@ -37,9 +37,9 @@ class PhoneNumberFragment : DialogFragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PhoneNumberViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[PhoneNumberViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

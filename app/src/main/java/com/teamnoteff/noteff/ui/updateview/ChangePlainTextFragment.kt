@@ -23,9 +23,9 @@ class ChangePlainTextFragment : Fragment() {
         return inflater.inflate(R.layout.change_plain_text_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ChangePlainTextViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[ChangePlainTextViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

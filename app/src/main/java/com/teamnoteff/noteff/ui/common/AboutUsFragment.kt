@@ -23,9 +23,9 @@ class AboutUsFragment : Fragment() {
         return inflater.inflate(R.layout.about_us_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AboutUsViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[AboutUsViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

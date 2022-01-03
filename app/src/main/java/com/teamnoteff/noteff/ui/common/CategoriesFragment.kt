@@ -23,9 +23,9 @@ class CategoriesFragment : Fragment() {
         return inflater.inflate(R.layout.categories_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CategoriesViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[CategoriesViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.teamnoteff.noteff.R
 import kotlinx.android.synthetic.main.activity_toggle.*
+// databinding is reqiured to use instead of this
 
 class ToggleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
