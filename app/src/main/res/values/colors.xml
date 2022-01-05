@@ -6,4 +6,5 @@
     <color name="grey_v1">#BDBDBD</color>
     <color name="grey_v2">#F2F2F2</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark">#AFA9A9</color>
 </resources>
