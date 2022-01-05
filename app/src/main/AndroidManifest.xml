@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Noteff">
         <activity
+            android:name=".BiometricAuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".CameraAccessActivity"
             android:exported="false" />
         <activity
