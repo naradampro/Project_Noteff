@@ -5,10 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.HomeFragmentBinding
+import com.teamnoteff.noteff.ui.recycler_adapters.HomeNoteListAdapter
 
 class HomeFragment : Fragment() {
 
@@ -16,22 +21,23 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
+    private lateinit var binding: HomeFragmentBinding
     private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.home_fragment, container, false)
 
-        val btnAddNote: ImageButton = view.findViewById(R.id.floating_action_button)
+        binding=DataBindingUtil.inflate(inflater,R.layout.home_fragment,container,false)
+
+        val btnAddNote: ImageButton = binding.floatingActionButton
 
         btnAddNote.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_home_to_nav_create)
         }
 
-
-        return view
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,5 +45,17 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         // TODO: Use the ViewModel
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.noteList.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(context)
+            // set the custom adapter to the RecyclerView
+            adapter = HomeNoteListAdapter()
+        }
+    }
+
 
 }
