@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.common
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.ui.create.CreateNoteActivity
 
 class NotesFragment : Fragment() {
 
@@ -29,7 +31,8 @@ class NotesFragment : Fragment() {
         val btnAdd : FloatingActionButton = view.findViewById(R.id.floating_action_button)
 
         btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_notes_to_nav_create)
+            val intent = Intent(activity, CreateNoteActivity::class.java)
+            startActivity(intent)
         }
 
         return view

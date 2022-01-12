@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.common
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.HomeFragmentBinding
+import com.teamnoteff.noteff.ui.create.CreateNoteActivity
+import com.teamnoteff.noteff.ui.create.CreateNoteFragment
 import com.teamnoteff.noteff.ui.recycler_adapters.HomeNoteListAdapter
 
 class HomeFragment : Fragment() {
@@ -34,7 +37,8 @@ class HomeFragment : Fragment() {
         val btnAddNote: ImageButton = binding.floatingActionButton
 
         btnAddNote.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_home_to_nav_create)
+            val intent = Intent(activity, CreateNoteActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root
@@ -56,6 +60,4 @@ class HomeFragment : Fragment() {
             adapter = HomeNoteListAdapter()
         }
     }
-
-
 }
