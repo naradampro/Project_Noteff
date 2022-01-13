@@ -7,10 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.CreatePinFragmentBinding
+import com.teamnoteff.noteff.databinding.FragmentViewPagerBinding
 
 class CreatePinFragment : Fragment() {
+    private lateinit var binding: CreatePinFragmentBinding
 
     companion object {
         fun newInstance() = CreatePinFragment()
@@ -22,20 +27,20 @@ class CreatePinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.create_pin_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.create_pin_fragment, container, false)
 
-        val btnNext: ImageButton = view.findViewById(R.id.btnNext)
-        btnNext.setOnClickListener{
-            findNavController().navigate(R.id.action_createPinFragment_to_confirmPinFragment)
+        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+
+        binding.btnNext.setOnClickListener {
+            viewPager?.currentItem = 3
         }
 
-        val btnBack: ImageButton = view.findViewById(R.id.btnBack)
-
-        btnNext.setOnClickListener{
-            findNavController().navigate(R.id.action_createPinFragment_to_setPasswordFragment)
+        binding.btnBack.setOnClickListener {
+            viewPager?.currentItem = 1
         }
 
-        return view
+
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

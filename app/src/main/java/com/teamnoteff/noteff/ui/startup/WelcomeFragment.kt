@@ -6,11 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import androidx.navigation.fragment.findNavController
+import androidx.databinding.DataBindingUtil
+import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.WelcomeFragmentBinding
 
 class WelcomeFragment : Fragment() {
+
+    private lateinit var binding: WelcomeFragmentBinding
 
     companion object {
         fun newInstance() = WelcomeFragment()
@@ -22,14 +25,15 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.welcome_fragment, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.welcome_fragment,container,false)
 
-        val btnStart: ImageButton = view.findViewById(R.id.btnStart)
-        btnStart.setOnClickListener{
-            findNavController().navigate(R.id.action_welcomeFragment_to_setPasswordFragment)
+        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+
+        binding.btnStart.setOnClickListener {
+            viewPager?.currentItem = 1
         }
 
-        return view
+        return binding.root
 
     }
 
