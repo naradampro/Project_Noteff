@@ -9,19 +9,19 @@ import com.teamnoteff.noteff.databinding.NoteCardBinding
 import com.teamnoteff.noteff.entities.Note
 import java.util.*
 
-class HomeNoteListAdapter:RecyclerView.Adapter<HomeNoteListAdapter.ViewHolder>(){
+class ViewAllNotesRecyclerAdapter:RecyclerView.Adapter<ViewAllNotesRecyclerAdapter.ViewHolder>(){
     private lateinit var binding:NoteCardBinding
 
     private val recentNotesList = ArrayList<Note>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNoteListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewAllNotesRecyclerAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.note_card, parent, false)
         return ViewHolder(binding)
     }
 
 
-    override fun onBindViewHolder(holder: HomeNoteListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewAllNotesRecyclerAdapter.ViewHolder, position: Int) {
         holder.bind(recentNotesList[position])
     }
 
