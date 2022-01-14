@@ -23,9 +23,9 @@ class UncategorizedFragment : Fragment() {
         return inflater.inflate(R.layout.uncategorized_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(UncategorizedViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[UncategorizedViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

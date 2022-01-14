@@ -1,12 +1,11 @@
 package com.teamnoteff.noteff.ui.updateview
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.teamnoteff.noteff.R
 
 class RemoveDialogFragment : DialogFragment() {
@@ -24,9 +23,9 @@ class RemoveDialogFragment : DialogFragment() {
         return inflater.inflate(R.layout.remove_dialog_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RemoveDialogViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[RemoveDialogViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

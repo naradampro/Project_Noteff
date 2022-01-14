@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
 
@@ -85,4 +84,6 @@ dependencies {
     implementation 'com.github.GoodieBag:Pinview:v1.4'
     //Search Bar
     implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+    //ViewPager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 }

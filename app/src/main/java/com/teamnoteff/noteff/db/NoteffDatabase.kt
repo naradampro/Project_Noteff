@@ -2,6 +2,7 @@ package com.teamnoteff.noteff.db
 
 import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 import com.teamnoteff.noteff.entities.*
@@ -11,31 +12,29 @@ import com.teamnoteff.noteff.entities.*
     entities =
     [
         Note::class,
-        NoteCategory::class,
-        DataSegmentType::class
+        NoteCategory::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class NoteffDatabase: RoomDatabase() {
 
-    companion object{
-        @Volatile
-        private var INSTANCE: NoteffDatabase?=null
+    abstract val noteDao: NoteDao
+    abstract val noteCategoryDao: NoteCategoryDao
 
-        fun getDatabase(context: Context): RoomDatabase {
-            // if the INSTANCE is not null, then return it,
-            // if it is, then create the database
+    companion object {
+        @Volatile
+        private var INSTANCE:NoteffDatabase? = null
+        fun getInstance(context: Context): NoteffDatabase {
             synchronized(this) {
                 var instance = INSTANCE
-
                 if (instance == null) {
-                    instance = databaseBuilder(
+                    instance = Room.databaseBuilder(
                         context.applicationContext,
                         NoteffDatabase::class.java,
-                        "subscriber_data_database"
+                        "noteff_data_database"
                     ).build()
                 }
-
                 return instance
             }
         }

@@ -1,13 +1,12 @@
 package com.teamnoteff.noteff.ui.create
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.teamnoteff.noteff.R
 
@@ -26,7 +25,7 @@ class DataSegmentFragment : DialogFragment() {
         val view = inflater.inflate(R.layout.data_segment_fragment, container, false)
 
         //the popup does not close when touched outside the popup
-        setCancelable(false)
+        isCancelable = false
 
         val button_link : ImageButton = view.findViewById(R.id.link_button)
 
@@ -66,9 +65,9 @@ class DataSegmentFragment : DialogFragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DataSegmentViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[DataSegmentViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

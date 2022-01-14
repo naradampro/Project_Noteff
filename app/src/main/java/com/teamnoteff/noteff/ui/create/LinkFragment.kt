@@ -1,13 +1,12 @@
 package com.teamnoteff.noteff.ui.create
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.teamnoteff.noteff.R
 
 class LinkFragment : DialogFragment() {
@@ -25,7 +24,7 @@ class LinkFragment : DialogFragment() {
         val view = inflater.inflate(R.layout.link_fragment, container, false)
 
         //the popup does not close when touched outside the popup
-        setCancelable(false)
+        isCancelable = false
 
         //to close popup
         val close: ImageButton = view.findViewById(R.id.imgBtnClose)
@@ -37,9 +36,9 @@ class LinkFragment : DialogFragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LinkViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[LinkViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

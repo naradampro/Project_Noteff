@@ -23,9 +23,9 @@ class ChangeNoteFragment : Fragment() {
         return inflater.inflate(R.layout.change_note_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ChangeNoteViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[ChangeNoteViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

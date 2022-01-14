@@ -1,14 +1,13 @@
 package com.teamnoteff.noteff
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.teamnoteff.noteff.R.id.navigation_menu
 import com.teamnoteff.noteff.databinding.ActivityMainBinding
-import com.teamnoteff.noteff.ui.create.CreateNoteActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +15,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Disables dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         this.supportActionBar?.hide()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,11 +31,13 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
 
-        val addNote = findViewById<FloatingActionButton>(R.id.floating_action_button)
+        R.menu.bottom_nav_menu
 
-//         addNote.setOnClickListener {
-//            val i = Intent(this, CreateNoteActivity::class.java)
-//            startActivity(i)
-//        }
+
+        navView.setOnItemSelectedListener {
+            // This is to avoid going to startDestination of opening of the BottomSheet
+            navController.navigate(it.itemId)
+            true
+        }
     }
 }

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Noteff" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_default</item>
+        <item name="colorPrimary">#091833</item>
         <item name="colorPrimaryVariant">@color/blue_v1</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
     </style>
 </resources>

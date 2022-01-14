@@ -24,18 +24,18 @@ class CreateNoteFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.create_note_fragment, container, false)
 
-        val button_addDS : Button = view.findViewById(R.id.btnAddDS)
+        val buttonAddDS : Button = view.findViewById(R.id.btnAddDS)
 
-        button_addDS.setOnClickListener{
+        buttonAddDS.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_createNoteFragment_to_dataSegmentFragment)
         }
 
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CreateNoteViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[CreateNoteViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

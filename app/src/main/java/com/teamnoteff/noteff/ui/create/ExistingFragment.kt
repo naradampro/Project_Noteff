@@ -23,9 +23,9 @@ class ExistingFragment : Fragment() {
         return inflater.inflate(R.layout.existing_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ExistingViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[ExistingViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

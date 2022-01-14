@@ -5,7 +5,7 @@ import com.teamnoteff.noteff.entities.NoteCategory
 
 class CategoryRepository(private val dao: NoteCategoryDao) {
 
-    val notes = dao.getAllCategories()
+    val categories = dao.getAllCategories()
 
     suspend fun insert(category: NoteCategory): Long {
         return dao.insertCategory(category)

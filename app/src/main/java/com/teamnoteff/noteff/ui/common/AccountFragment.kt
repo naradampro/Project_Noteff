@@ -23,9 +23,9 @@ class AccountFragment : Fragment() {
         return inflater.inflate(R.layout.account_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[AccountViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
