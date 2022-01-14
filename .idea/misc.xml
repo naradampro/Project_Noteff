@@ -98,6 +98,7 @@
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layout/fragment_notifications.xml" value="0.12708333333333333" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/activity_create_note.xml" value="0.14175724637681159" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/create_note_fragment.xml" value="0.1" />
+        <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/notes_fragment.xml" value="0.21557971014492755" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/home_fragment.xml" value="0.264" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/menu_fragment.xml" value="0.14175724637681159" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/startup_process/layout/modify_main_card.xml" value="0.264" />
@@ -112,6 +113,7 @@
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/note_card.xml" value="0.4" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/view_fragment.xml" value="0.15625" />
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26205128205128203" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_important.xml" value="0.26614583333333336" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_link.xml" value="0.26614583333333336" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.25" />

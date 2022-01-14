@@ -13,9 +13,6 @@
             android:name=".ui.create.ToggleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.create.DialogActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.updateview.UpdateViewActivity"
             android:exported="false" />
         <activity
@@ -23,9 +20,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.create.CreateNoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.common.CreateNote"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
