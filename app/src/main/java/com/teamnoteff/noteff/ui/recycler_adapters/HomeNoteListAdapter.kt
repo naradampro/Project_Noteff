@@ -2,19 +2,17 @@ package com.teamnoteff.noteff.ui.recycler_adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.NoteCardBinding
+import com.teamnoteff.noteff.entities.Note
+import java.util.*
 
 class HomeNoteListAdapter:RecyclerView.Adapter<HomeNoteListAdapter.ViewHolder>(){
     private lateinit var binding:NoteCardBinding
 
-    private var titles = arrayOf("Chapter One","Chapter Two","Chapter Three","Chapter Four","Chapter Five","Chapter Six")
-
-    private var details = arrayOf("Item One details","Item Two details","Item Three details","Item Four details","Item Five details","Item Six details")
-
+    private val recentNotesList = ArrayList<Note>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNoteListAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -23,21 +21,24 @@ class HomeNoteListAdapter:RecyclerView.Adapter<HomeNoteListAdapter.ViewHolder>()
     }
 
 
-
     override fun onBindViewHolder(holder: HomeNoteListAdapter.ViewHolder, position: Int) {
-        holder.cardTitle.text = titles[position]
-        holder.cardDisplayText.text = details[position]
-
+        holder.bind(recentNotesList[position])
     }
 
     override fun getItemCount(): Int {
-        return titles.size
+        return recentNotesList.size
+    }
+
+    fun setList(notes: List<Note>) {
+        recentNotesList.clear()
+        recentNotesList.addAll(notes)
     }
 
     inner class ViewHolder(binding:NoteCardBinding): RecyclerView.ViewHolder(binding.root){
-        var cardTitle: TextView = binding.txtTitle
-        var cardDisplayText: TextView = binding.txtDisplay
-
+        fun bind(note: Note) {
+            binding.txtTitle.text = note.title
+            binding.txtDisplay.text = note.displaytext
+        }
         /*init {
             binding.cardView.setOnClickListener{
                 val position: Int = adapterPosition
