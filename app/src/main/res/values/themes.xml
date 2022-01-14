@@ -14,6 +14,20 @@
         <!-- Customize your theme here. -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
+        <!--Extended Floating Action Buttons style-->
+        <item name="extendedFloatingActionButtonStyle">@style/FloatingActionButtonStyle</item>
+
         <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+
     </style>
+
+    <style name="FloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+    </style>
+
+    <style name="FabShapeStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">5%</item>
+    </style>
+
 </resources>

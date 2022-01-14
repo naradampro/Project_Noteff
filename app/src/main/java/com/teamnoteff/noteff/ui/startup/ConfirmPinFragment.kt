@@ -1,16 +1,20 @@
 package com.teamnoteff.noteff.ui.startup
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.ConfirmPinFragmentBinding
 
 class ConfirmPinFragment : Fragment() {
+    private lateinit var binding: ConfirmPinFragmentBinding
 
     companion object {
         fun newInstance() = ConfirmPinFragment()
@@ -22,14 +26,28 @@ class ConfirmPinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.confirm_pin_fragment, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.confirm_pin_fragment, container, false)
 
-        val btnNext: ImageButton = view.findViewById(R.id.btnNext)
-        btnNext.setOnClickListener{
-            findNavController().navigate(R.id.action_confirmPinFragment_to_createPinFragment)
+        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+
+        binding.btnBack.setOnClickListener {
+            viewPager?.currentItem = 2
         }
 
-        return view
+        binding.btnFinish.setOnClickListener{
+            findNavController().navigate(R.id.action_viewPagerFragment_to_mobile_navigation)
+            onBoardingFinished()
+        }
+
+
+        return binding.root
+    }
+
+    private fun onBoardingFinished(){
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("Finished", true)
+        editor.apply()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
