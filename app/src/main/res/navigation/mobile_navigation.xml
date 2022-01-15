@@ -9,11 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.teamnoteff.noteff.ui.common.HomeFragment"
         android:label="@string/bnav_txt_home"
-        tools:layout="@layout/home_fragment" >
-        <action
-            android:id="@+id/action_navigation_home_to_nav_create"
-            app:destination="@id/nav_create" />
-    </fragment>
+        tools:layout="@layout/home_fragment" />
 
     <fragment
         android:id="@+id/navigation_categories"
@@ -25,11 +21,7 @@
         android:id="@+id/navigation_notes"
         android:name="com.teamnoteff.noteff.ui.common.NotesFragment"
         android:label="@string/bnav_txt_notes"
-        tools:layout="@layout/notes_fragment" >
-        <action
-            android:id="@+id/action_navigation_notes_to_nav_create"
-            app:destination="@id/nav_create" />
-    </fragment>
+        tools:layout="@layout/notes_fragment" />
 
     <dialog
         android:id="@+id/navigation_menu"
@@ -65,8 +57,6 @@
         android:label="AppSettingsFragment"
         tools:layout="@layout/app_settings_fragment" />
 
-    <include app:graph="@navigation/nav_create" />
-    <include app:graph="@navigation/nav_updateview" />
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.teamnoteff.noteff.ui.common.HelpFragment"

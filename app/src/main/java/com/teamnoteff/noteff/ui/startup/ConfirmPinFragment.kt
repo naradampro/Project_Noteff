@@ -1,6 +1,7 @@
 package com.teamnoteff.noteff.ui.startup
 
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.teamnoteff.noteff.MainActivity
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.ConfirmPinFragmentBinding
 
@@ -35,7 +37,8 @@ class ConfirmPinFragment : Fragment() {
         }
 
         binding.btnFinish.setOnClickListener{
-            findNavController().navigate(R.id.action_viewPagerFragment_to_mobile_navigation)
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
             onBoardingFinished()
         }
 
