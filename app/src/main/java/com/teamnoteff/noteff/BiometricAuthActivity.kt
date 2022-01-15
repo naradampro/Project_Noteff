@@ -48,7 +48,7 @@ class BiometricAuthActivity : AppCompatActivity() {
         //Setup title,subtitle and desc on auth dialog
         promptInfo=androidx.biometric.BiometricPrompt.PromptInfo.Builder()
             .setTitle("Biometric Authentication")
-            .setSubtitle("Login using Fingerprint or Face")
+            .setSubtitle("Login using Fingerprint")
             .setNegativeButtonText("Cancel")
             .build()
 
