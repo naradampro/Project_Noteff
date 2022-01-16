@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
+import com.teamnoteff.noteff.ui.recycler_adapters.CreateNoteDSRecyclerAdapter
+import com.teamnoteff.noteff.ui.recycler_adapters.Records
 
 class CreateNoteFragment : Fragment() {
 
@@ -18,6 +21,7 @@ class CreateNoteFragment : Fragment() {
 
     private lateinit var binding: CreateNoteFragmentBinding
     private val mainViewModel: CreateNoteViewModel by activityViewModels()
+    private lateinit var dsAdapter: CreateNoteDSRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +44,18 @@ class CreateNoteFragment : Fragment() {
             // Assign the view model to a property in the binding class
             viewModel = mainViewModel
         }
+    }
+
+    private fun initRecentNotesList(){
+
+        binding.viewRecyclerview.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(context)
+            // set the custom adapter to the RecyclerView
+            this.adapter = dsAdapter
+        }
+
     }
 
 }
