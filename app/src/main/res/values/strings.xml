@@ -34,4 +34,10 @@
     <string name="modify_remove">Modify/Remove</string>
     <string name="save">Save</string>
 
+    <string-array name="drop_down_list">
+        <item>View</item>
+        <item>Edit</item>
+        <item>Remove</item>
+    </string-array>
+
 </resources>

@@ -29,6 +29,7 @@
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/activity_toggle.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/app_settings_fragment.xml" value="0.12158054711246201" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/categories_fragment.xml" value="0.12158054711246201" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/category_card_fragment.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/change_note_fragment.xml" value="0.2359375" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/change_plain_text_fragment.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/confirm_pin_fragment.xml" value="0.2359375" />
@@ -36,6 +37,7 @@
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/create_pin_fragment.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/data_segment_fragment.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.18297101449275363" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_category_card.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_home.xml" value="0.18297101449275363" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_menu.xml" value="0.18297101449275363" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layout/fragment_menu2.xml" value="0.1644021739130435" />
@@ -65,6 +67,7 @@
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/about_us.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/account.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/app_settings.xml" value="0.1634963768115942" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/categories_fragment.xml" value="0.24739583333333334" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/help.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/activity_start_up.xml" value="0.16296296296296298" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/add_pin.xml" value="0.1634963768115942" />
@@ -86,6 +89,7 @@
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/set_password_fragment.xml" value="0.25" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/welcome_fragment.xml" value="0.1" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/startup_process/layout/welcome_page.xml" value="0.264" />
+        <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/category_card.xml" value="0.12158054711246201" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note.xml" value="0.1634963768115942" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_default_note_popup.xml" value="0.14990942028985507" />
         <entry key="..\:/MAD PROJECT/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/change_note.xml" value="0.1634963768115942" />
