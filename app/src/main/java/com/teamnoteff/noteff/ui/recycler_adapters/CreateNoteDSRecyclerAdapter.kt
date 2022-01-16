@@ -1,64 +1,95 @@
 package com.teamnoteff.noteff.ui.recycler_adapters
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.DsrvcardModifyImportantTextBinding
+import com.teamnoteff.noteff.databinding.DsrvcardModifyPlainTextBinding
+import com.teamnoteff.noteff.entities.*
 
-class CreateNoteDSRecyclerAdapter(private val context: Context, private val listOfNotes: MutableList<Records>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+
+    private val datasegments: MutableList<DataSegment> = ArrayList()
 
     companion object {
-        const val IMPORTANT_VIEW_TYPE = 1
-        const val PLAIN_VIEW_TYPE = 2
+        const val PLAIN_TEXT_VIEW_TYPE = 1
+        const val IMPORTANT_TEXT_VIEW_TYPE = 2
+        const val PHONENUMBER_VIEW_TYPE = 3
+        /*const val LINK_VIEW_TYPE = 4
+        const val IMAGE_VIEW_TYPE = 5*/
     }
 
-    class ImportantViewHolder(private val importantView: View) : RecyclerView.ViewHolder(importantView) {
-        var imageView: ImageView = importantView.findViewById(R.id.important_img)
-        var textView: TextView = importantView.findViewById(R.id.txtImportant)
+    override fun getItemViewType(position: Int): Int {
+        if (datasegments[position] is PlainTextDataSegment) {
+            return PLAIN_TEXT_VIEW_TYPE
+        }
+        if (datasegments[position] is ImportantTextDataSegment) {
+            return IMPORTANT_TEXT_VIEW_TYPE
+        }
+        return PHONENUMBER_VIEW_TYPE
     }
 
-    class PlainTextViewHolder(private val plainTextView: View) : RecyclerView.ViewHolder(plainTextView) {
-        var plain_text: TextView = plainTextView.findViewById(R.id.txtPlainDisplay)
+
+    override fun getItemCount(): Int {
+        return datasegments.size
     }
 
+    fun setList(segments: List<DataSegment>) {
+        datasegments.clear()
+        datasegments.addAll(segments)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when(viewType){
+            /*Other types also comes like this.
+            PHONENUMBER_VIEW_TYPE -> ImportantTextViewHolder(DsrvcardModifyPhoneNumberBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))*/
 
-        if (viewType == IMPORTANT_VIEW_TYPE) {
-            return ImportantViewHolder(
-                LayoutInflater.from(context).inflate(R.layout.modify_important, parent, false)
-            )
-        }else {
-            return PlainTextViewHolder(
-                LayoutInflater.from(context).inflate(R.layout.modify_plain_text, parent, false)
-            )
+
+            PLAIN_TEXT_VIEW_TYPE -> PlainTextViewHolder(DsrvcardModifyPlainTextBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
+
+            PHONENUMBER_VIEW_TYPE -> PhoneNumberViewHolder(DsrvcardModifyPlainTextBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
+
+            else -> ImportantTextViewHolder(DsrvcardModifyImportantTextBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val itemData = listOfNotes[position]
-
-        if (itemData.viewType == IMPORTANT_VIEW_TYPE) {
-            val importantViewHolder = holder as ImportantViewHolder
-            importantViewHolder.textView.text = itemData.text
+        val item = datasegments[position]
+        if (holder is PlainTextViewHolder && item is PlainTextDataSegment) {
+            holder.bind(item)
         }
-        else {
-            val plainViewHolder = holder as PlainTextViewHolder
-            plainViewHolder.plain_text.text = itemData.text
+        if (holder is ImportantTextViewHolder && item is ImportantTextDataSegment) {
+            holder.bind(item)
+        }
+        if (holder is PhoneNumberViewHolder && item is PhoneNumberDataSegment) {
+            holder.bind(item)
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return listOfNotes[position].viewType
+    inner class PlainTextViewHolder(val binding: DsrvcardModifyPlainTextBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(segment: PlainTextDataSegment) {
+            binding.txtPlainDisplay.text = segment.content
+        }
     }
 
-    override fun getItemCount(): Int {
-        return listOfNotes.size
+    inner class ImportantTextViewHolder(val binding: DsrvcardModifyImportantTextBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(segment: ImportantTextDataSegment) {
+            binding.txtImportant.text = segment.content
+        }
     }
+
+    inner class PhoneNumberViewHolder(val binding: DsrvcardModifyPlainTextBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(segment: PhoneNumberDataSegment) {
+            binding.txtPlainDisplay.text = segment.content
+        }
+    }
+
 }
-
-data class Records(val viewType: Int, val text: String)

@@ -12,13 +12,11 @@ class CreateNoteViewModel(
     ) : ViewModel() {
 
     //data segment list
-    private val _datasegments = MutableLiveData<ArrayList<DataSegment>>()
-    val datasegments: LiveData<ArrayList<DataSegment>> = _datasegments
+    private val datasegments = MutableLiveData<ArrayList<DataSegment>>()
 
-    fun insertPlainTextDS(segment: PlainTextDataSegment){
+    fun insertDataSegment(segment: DataSegment){
         datasegments.value?.apply{
             add(segment)
         }
     }
-
 }

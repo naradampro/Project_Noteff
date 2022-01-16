@@ -31,7 +31,7 @@ class NotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= inflate(inflater,R.layout.notes_fragment,container,false)
+        binding= NotesFragmentBinding.inflate(inflater,container,false)
 
         binding.floatingActionButton.setOnClickListener {
             val intent = Intent(activity, CreateNoteActivity::class.java)
