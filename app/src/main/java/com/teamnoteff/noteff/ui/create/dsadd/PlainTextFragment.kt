@@ -1,32 +1,39 @@
-package com.teamnoteff.noteff.ui.create
+package com.teamnoteff.noteff.ui.create.dsadd
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
-import com.teamnoteff.noteff.R
-import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
+import com.teamnoteff.noteff.databinding.DsaddPlainTextFragmentBinding
+import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
 
-class CreateNoteFragment : Fragment() {
+class PlainTextFragment : DialogFragment() {
 
     companion object {
-        fun newInstance() = CreateNoteFragment()
+        fun newInstance() = PlainTextFragment()
     }
 
-    private lateinit var binding: CreateNoteFragmentBinding
     private val mainViewModel: CreateNoteViewModel by activityViewModels()
+    private lateinit var binding: DsaddPlainTextFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= CreateNoteFragmentBinding.inflate(inflater,container,false)
+        binding= DsaddPlainTextFragmentBinding.inflate(inflater, container, false)
 
-        binding.btnAddDS.setOnClickListener{
-            Navigation.findNavController(binding.root).navigate(R.id.action_createNoteFragment_to_dataSegmentFragment)
+        //the popup does not close when touched outside the popup
+        isCancelable = false
+
+        binding.imgBtnClose.setOnClickListener{
+            dismiss()
+        }
+
+        
+        binding.btnAdd.setOnClickListener {
+            binding.btnAdd.text = mainViewModel.name
         }
 
         return binding.root

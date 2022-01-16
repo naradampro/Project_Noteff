@@ -6,12 +6,6 @@
     app:startDestination="@id/createNoteFragment">
 
     <dialog
-        android:id="@+id/plainTextFragment"
-        android:name="com.teamnoteff.noteff.ui.create.PlainTextFragment"
-        android:label="plain_text_fragment"
-        tools:layout="@layout/plain_text_fragment" />
-
-    <dialog
         android:id="@+id/dataSegmentFragment"
         android:name="com.teamnoteff.noteff.ui.create.DataSegmentFragment"
         android:label="data_segment_fragment"
@@ -19,25 +13,43 @@
         <action
             android:id="@+id/action_dataSegmentFragment_to_plainTextFragment"
             app:destination="@id/plainTextFragment" />
+
+        <action
+            android:id="@+id/action_dataSegmentFragment_to_importantTextFragment"
+            app:destination="@id/plainTextFragment" />
+
         <action
             android:id="@+id/action_dataSegmentFragment_to_linkFragment"
             app:destination="@id/linkFragment" />
+
         <action
             android:id="@+id/action_dataSegmentFragment_to_phoneNumberFragment"
             app:destination="@id/phoneNumberFragment" />
     </dialog>
 
     <dialog
+        android:id="@+id/plainTextFragment"
+        android:name="com.teamnoteff.noteff.ui.create.dsadd.PlainTextFragment"
+        android:label="plain_text_fragment"
+        tools:layout="@layout/dsadd_plain_text_fragment" />
+
+    <dialog
+        android:id="@+id/importantTextFragment"
+        android:name="com.teamnoteff.noteff.ui.create.dsadd.ImportantTextFragment"
+        android:label="important_text_fragment"
+        tools:layout="@layout/dsadd_important_text_fragment" />
+
+    <dialog
         android:id="@+id/linkFragment"
-        android:name="com.teamnoteff.noteff.ui.create.LinkFragment"
+        android:name="com.teamnoteff.noteff.ui.create.dsadd.LinkFragment"
         android:label="link_fragment"
-        tools:layout="@layout/link_fragment" />
+        tools:layout="@layout/dsadd_link_fragment" />
 
     <dialog
         android:id="@+id/phoneNumberFragment"
-        android:name="com.teamnoteff.noteff.ui.create.PhoneNumberFragment"
+        android:name="com.teamnoteff.noteff.ui.create.dsadd.PhoneNumberFragment"
         android:label="phone_number_fragment"
-        tools:layout="@layout/phone_number_fragment" />
+        tools:layout="@layout/dsadd_phone_number_fragment" />
 
     <fragment
         android:id="@+id/createNoteFragment"

@@ -3,7 +3,6 @@ package com.teamnoteff.noteff.ui.common
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +12,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
-import com.teamnoteff.noteff.R.layout.categories_fragment
 import com.teamnoteff.noteff.databinding.HomeFragmentBinding
 import com.teamnoteff.noteff.db.NoteffDatabase
 import com.teamnoteff.noteff.entities.Note
@@ -47,8 +44,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding=DataBindingUtil.inflate(inflater,
-            com.teamnoteff.noteff.R.layout.home_fragment,container,false)
+        binding=DataBindingUtil.inflate(inflater, R.layout.home_fragment,container,false)
 
         val btnAddNote: ImageButton = binding.floatingActionButton
 

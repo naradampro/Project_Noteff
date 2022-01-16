@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+<data>
+    <variable
+        name="viewModel"
+        type="com.teamnoteff.noteff.ui.create.CreateNoteViewModel" />
+</data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +16,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <LinearLayout
@@ -149,7 +155,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/viewRecyclerview"
@@ -168,30 +174,44 @@
     </ScrollView>
 
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btnAddDS"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_a_data_segment"
-        android:textAllCaps="false"
-        android:textColor="@color/blue_default"
-        app:strokeColor="@color/blue_default"
-        app:strokeWidth="1.5dp"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#ffffff"
-        android:layout_marginTop="8dp"/>
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey_v2">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btnChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="25dp"
-        android:text="@string/create"
-        android:backgroundTint="@color/blue_default"
-        android:textColor="#ffffff"
-        android:textAlignment="center"/>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnAddDS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#ffffff"
+            android:text="@string/add_a_data_segment"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_default"
+            app:strokeColor="@color/blue_default"
+            app:strokeWidth="1.5dp"/>
 
-</LinearLayout>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="@color/blue_default"
+            android:text="@string/create"
+            android:textAlignment="center"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+</RelativeLayout></layout>
