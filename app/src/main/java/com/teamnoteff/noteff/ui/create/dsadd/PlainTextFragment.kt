@@ -33,7 +33,7 @@ class PlainTextFragment : DialogFragment() {
 
         
         binding.btnAdd.setOnClickListener {
-            binding.btnAdd.text = mainViewModel.name
+            TODO()
         }
 
         return binding.root
