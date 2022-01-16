@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "plaintext_data_segment_table")
+@Entity(tableName = "image_data_segment_table")
 class ImageDataSegment(
     @PrimaryKey(autoGenerate = true)
     override val id: Int,
