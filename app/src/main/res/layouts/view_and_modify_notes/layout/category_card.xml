@@ -2,7 +2,6 @@
 <layout >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="wrap_content" >
@@ -30,19 +29,19 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"/>
 
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="30dp"
-                android:layout_height="8dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/ic_dropdown"
+            <ImageView
                 android:layout_margin="10dp"
-                android:entries="@array/drop_down_list" />
+                android:src="@drawable/ic_dropdown"
+                android:id="@+id/dropdown"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"/>
+
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
 
-</LinearLayout></layout>
+</LinearLayout>
+</layout>
