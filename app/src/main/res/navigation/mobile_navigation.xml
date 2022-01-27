@@ -15,7 +15,17 @@
         android:id="@+id/navigation_categories"
         android:name="com.teamnoteff.noteff.ui.common.CategoriesFragment"
         android:label="@string/bnav_txt_categories"
-        tools:layout="@layout/categories_fragment" />
+        tools:layout="@layout/categories_fragment" >
+
+        <action
+            android:id="@+id/action_navigation_categories_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment" />
+
+        <action
+            android:id="@+id/action_navigation_categories_to_viewCategoryNotesFragment"
+            app:destination="@id/viewCategoryNotesFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notes"
@@ -67,5 +77,15 @@
         android:name="com.teamnoteff.noteff.ui.common.AboutUsFragment"
         android:label="about_us_fragment"
         tools:layout="@layout/about_us_fragment" />
+    <fragment
+        android:id="@+id/editCategoryFragment"
+        android:name="com.teamnoteff.noteff.ui.common.EditCategoryFragment"
+        android:label="edit_category_fragment"
+        tools:layout="@layout/edit_category_fragment" />
+    <fragment
+        android:id="@+id/viewCategoryNotesFragment"
+        android:name="com.teamnoteff.noteff.ui.common.ViewCategoryNotesFragment"
+        android:label="view_category_notes_fragment"
+        tools:layout="@layout/view_category_notes_fragment" />
 
 </navigation>

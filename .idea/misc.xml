@@ -133,10 +133,13 @@
         <entry key="..\:/MAD_Project/Project_Noteff/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26205128205128203" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_important.xml" value="0.26614583333333336" />
         <entry key="..\:/Project_Noteff/app/src/main/res/drawable/ds_ic_link.xml" value="0.26614583333333336" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/category_card_fragment.xml" value="0.12708333333333333" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/edit_category_fragment.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_categories.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layout/fragment_notes.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layout/view_category_notes_fragment.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/activity_create_note.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/create_note.xml" value="0.2" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/create_categories_and_notes/layout/create_note_fragment.xml" value="0.20878623188405798" />
@@ -148,6 +151,8 @@
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/about_us.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/account.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/app_settings.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/categories_fragment.xml" value="0.25" />
+        <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/edit_category.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/menu_settings/layout/home_fragment.xml" value="0.25" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/startup_process/layout/add_pin.xml" value="0.24739583333333334" />
         <entry key="..\:/Project_Noteff/app/src/main/res/layouts/view_and_modify_notes/layout/activity_update_view.xml" value="0.25" />
