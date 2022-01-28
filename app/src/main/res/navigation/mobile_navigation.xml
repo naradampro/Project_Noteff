@@ -9,29 +9,32 @@
         android:id="@+id/navigation_home"
         android:name="com.teamnoteff.noteff.ui.common.HomeFragment"
         android:label="@string/bnav_txt_home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+
+        <action
+            android:id="@+id/action_navigation_home_to_categories"
+            app:destination="@id/navigation_categories" />
+
+        <action
+            android:id="@+id/action_navigation_home_to_notes"
+            app:destination="@id/navigation_notes" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_categories"
         android:name="com.teamnoteff.noteff.ui.common.CategoriesFragment"
         android:label="@string/bnav_txt_categories"
-        tools:layout="@layout/categories_fragment" >
-
-        <action
-            android:id="@+id/action_navigation_categories_to_editCategoryFragment"
-            app:destination="@id/editCategoryFragment" />
-
-        <action
-            android:id="@+id/action_navigation_categories_to_viewCategoryNotesFragment"
-            app:destination="@id/viewCategoryNotesFragment" />
-
-    </fragment>
+        tools:layout="@layout/categories_fragment" />
 
     <fragment
         android:id="@+id/navigation_notes"
         android:name="com.teamnoteff.noteff.ui.common.NotesFragment"
         android:label="@string/bnav_txt_notes"
-        tools:layout="@layout/notes_fragment" />
+        tools:layout="@layout/notes_fragment" >
+        <action
+            android:id="@+id/action_navigation_notes_to_nav_create"
+            app:destination="@id/nav_create" />
+    </fragment>
 
     <dialog
         android:id="@+id/navigation_menu"
@@ -67,6 +70,8 @@
         android:label="AppSettingsFragment"
         tools:layout="@layout/app_settings_fragment" />
 
+    <include app:graph="@navigation/nav_create" />
+    <include app:graph="@navigation/nav_updateview" />
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.teamnoteff.noteff.ui.common.HelpFragment"
@@ -77,15 +82,5 @@
         android:name="com.teamnoteff.noteff.ui.common.AboutUsFragment"
         android:label="about_us_fragment"
         tools:layout="@layout/about_us_fragment" />
-    <fragment
-        android:id="@+id/editCategoryFragment"
-        android:name="com.teamnoteff.noteff.ui.common.EditCategoryFragment"
-        android:label="edit_category_fragment"
-        tools:layout="@layout/edit_category_fragment" />
-    <fragment
-        android:id="@+id/viewCategoryNotesFragment"
-        android:name="com.teamnoteff.noteff.ui.common.ViewCategoryNotesFragment"
-        android:label="view_category_notes_fragment"
-        tools:layout="@layout/view_category_notes_fragment" />
 
 </navigation>

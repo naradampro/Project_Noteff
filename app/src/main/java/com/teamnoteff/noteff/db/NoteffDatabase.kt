@@ -3,16 +3,18 @@ package com.teamnoteff.noteff.db
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
-import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
-import com.teamnoteff.noteff.entities.*
+import com.teamnoteff.noteff.entities.Note
+import com.teamnoteff.noteff.entities.NoteCategory
+import com.teamnoteff.noteff.entities.PlainTextDataSegment
 
 
 @Database(
     entities =
     [
         Note::class,
-        NoteCategory::class
+        NoteCategory::class,
+        PlainTextDataSegment::class
     ],
     version = 1,
     exportSchema = false

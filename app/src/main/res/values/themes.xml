@@ -17,8 +17,6 @@
         <!--Extended Floating Action Buttons style-->
         <item name="extendedFloatingActionButtonStyle">@style/FloatingActionButtonStyle</item>
 
-        <!--<item name="android:textColorPrimary">?attr/colorOnPrimary</item>-->
-
     </style>
 
     <style name="FloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">

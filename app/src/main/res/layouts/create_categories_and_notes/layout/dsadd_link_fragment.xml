@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.teamnoteff.noteff.ui.create.CreateNoteViewModel" />
+    </data>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -7,7 +14,7 @@
         android:minHeight="200dp"
         android:orientation="vertical"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".ui.create.LinkFragment">
+        tools:context=".ui.create.dsadd.DsAddFragment">
 
         <!--Close Icon-->
         <ImageButton
@@ -47,4 +54,4 @@
             android:paddingLeft="50dp"
             android:paddingRight="50dp"/>
 
-    </LinearLayout>
+    </LinearLayout></layout>
