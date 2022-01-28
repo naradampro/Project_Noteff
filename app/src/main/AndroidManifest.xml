@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Noteff" >
         <activity
-            android:name=".ui.common.CommonMainActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.create.ToggleActivity"
             android:exported="false" />
         <activity
@@ -20,22 +17,24 @@
             android:exported="false" />
         <activity
             android:name=".ui.startup.StartUpActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name=".ui.create.CreateNoteActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustPan" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
