@@ -1,10 +1,9 @@
 package com.teamnoteff.noteff.ui.create
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.teamnoteff.noteff.entities.DataSegment
-import com.teamnoteff.noteff.entities.PlainTextDataSegment
+import com.teamnoteff.noteff.entities.ImportantTextDataSegment
 import com.teamnoteff.noteff.repositories.NoteRepository
 
 class CreateNoteViewModel(
@@ -12,11 +11,9 @@ class CreateNoteViewModel(
     ) : ViewModel() {
 
     //data segment list
-    private val datasegments = MutableLiveData<ArrayList<DataSegment>>()
+    val datasegments = MutableLiveData<ArrayList<DataSegment>>(arrayListOf())
 
     fun insertDataSegment(segment: DataSegment){
-        datasegments.value?.apply{
-            add(segment)
-        }
+        datasegments.value?.add(segment)
     }
 }

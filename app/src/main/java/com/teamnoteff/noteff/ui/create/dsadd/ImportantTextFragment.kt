@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.teamnoteff.noteff.databinding.DsaddImportantTextFragmentBinding
+import com.teamnoteff.noteff.entities.ImportantTextDataSegment
+import com.teamnoteff.noteff.entities.PlainTextDataSegment
+import com.teamnoteff.noteff.ui.create.CreateNoteFragment
 import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
 
 class ImportantTextFragment : DialogFragment() {
@@ -28,6 +31,21 @@ class ImportantTextFragment : DialogFragment() {
         isCancelable = false
 
         binding.imgBtnClose.setOnClickListener{
+            dismiss()
+        }
+
+        binding.btnAdd.setOnClickListener {
+            val content = binding.etNoteTitle.text.toString()
+
+            //id and note id should be init later
+            val segment = ImportantTextDataSegment(1,1, content)
+
+            mainViewModel.insertDataSegment(segment)
+
+            //invoking the parent fragment's functions to update recycler view
+            val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+            ps.displayDataSegmentList()
+
             dismiss()
         }
 

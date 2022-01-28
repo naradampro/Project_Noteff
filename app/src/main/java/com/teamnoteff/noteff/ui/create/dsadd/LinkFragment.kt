@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.teamnoteff.noteff.databinding.DsaddLinkFragmentBinding
+import com.teamnoteff.noteff.entities.LinkDataSegment
+import com.teamnoteff.noteff.entities.PlainTextDataSegment
+import com.teamnoteff.noteff.ui.create.CreateNoteFragment
 import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
 
 class LinkFragment : DialogFragment() {

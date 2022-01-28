@@ -9,13 +9,13 @@ import com.teamnoteff.noteff.entities.*
 
 class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    private val datasegments: MutableList<DataSegment> = ArrayList()
+    private var datasegments: ArrayList<DataSegment> = arrayListOf()
 
     companion object {
         const val PLAIN_TEXT_VIEW_TYPE = 1
         const val IMPORTANT_TEXT_VIEW_TYPE = 2
         const val PHONENUMBER_VIEW_TYPE = 3
-        /*const val LINK_VIEW_TYPE = 4
+        const val LINK_VIEW_TYPE = 4/*
         const val IMAGE_VIEW_TYPE = 5*/
     }
 
@@ -23,10 +23,12 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
         if (datasegments[position] is PlainTextDataSegment) {
             return PLAIN_TEXT_VIEW_TYPE
         }
-        if (datasegments[position] is ImportantTextDataSegment) {
+        else if (datasegments[position] is ImportantTextDataSegment) {
             return IMPORTANT_TEXT_VIEW_TYPE
         }
-        return PHONENUMBER_VIEW_TYPE
+        else{
+            return PLAIN_TEXT_VIEW_TYPE
+        }
     }
 
 
@@ -35,8 +37,9 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
     }
 
     fun setList(segments: List<DataSegment>) {
-        datasegments.clear()
-        datasegments.addAll(segments)
+        this.datasegments.clear()
+        this.datasegments.addAll(segments)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -55,7 +58,11 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
                 LayoutInflater.from(parent.context),
                 parent, false))
 
-            else -> ImportantTextViewHolder(DsrvcardModifyImportantTextBinding.inflate(
+            IMPORTANT_TEXT_VIEW_TYPE -> ImportantTextViewHolder(DsrvcardModifyImportantTextBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
+
+            else -> PlainTextViewHolder(DsrvcardModifyPlainTextBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false))
         }
@@ -66,10 +73,10 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
         if (holder is PlainTextViewHolder && item is PlainTextDataSegment) {
             holder.bind(item)
         }
-        if (holder is ImportantTextViewHolder && item is ImportantTextDataSegment) {
+        else if (holder is ImportantTextViewHolder && item is ImportantTextDataSegment) {
             holder.bind(item)
         }
-        if (holder is PhoneNumberViewHolder && item is PhoneNumberDataSegment) {
+        else if (holder is PhoneNumberViewHolder && item is PhoneNumberDataSegment) {
             holder.bind(item)
         }
     }

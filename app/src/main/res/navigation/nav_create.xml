@@ -10,13 +10,6 @@
         android:name="com.teamnoteff.noteff.ui.create.DataSegmentFragment"
         android:label="data_segment_fragment"
         tools:layout="@layout/data_segment_fragment" >
-        <action
-            android:id="@+id/action_dataSegmentFragment_to_plainTextFragment"
-            app:destination="@id/plainTextFragment" />
-
-        <action
-            android:id="@+id/action_dataSegmentFragment_to_importantTextFragment"
-            app:destination="@id/plainTextFragment" />
 
         <action
             android:id="@+id/action_dataSegmentFragment_to_linkFragment"
@@ -25,6 +18,12 @@
         <action
             android:id="@+id/action_dataSegmentFragment_to_phoneNumberFragment"
             app:destination="@id/phoneNumberFragment" />
+        <action
+            android:id="@+id/action_dataSegmentFragment_to_importantTextFragment"
+            app:destination="@id/importantTextFragment" />
+        <action
+            android:id="@+id/action_dataSegmentFragment_to_plainTextFragment"
+            app:destination="@id/plainTextFragment" />
     </dialog>
 
     <dialog

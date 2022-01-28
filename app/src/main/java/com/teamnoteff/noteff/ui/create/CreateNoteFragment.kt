@@ -1,6 +1,7 @@
 package com.teamnoteff.noteff.ui.create
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +38,10 @@ class CreateNoteFragment : Fragment() {
             Navigation.findNavController(binding.root).navigate(R.id.action_createNoteFragment_to_dataSegmentFragment)
         }
 
+        binding.btnCreateNote.setOnClickListener {
+            TODO()
+        }
+
         return binding.root
     }
 
@@ -67,16 +72,16 @@ class CreateNoteFragment : Fragment() {
     }
 
 
+
+
     @SuppressLint("NotifyDataSetChanged")
-    private fun displayDataSegmentList() {
-        /*
+    fun displayDataSegmentList() {
         mainViewModel.datasegments.observe(viewLifecycleOwner, {
             dsAdapter.setList(it)
-            dsAdapter.notifyDataSetChanged()
         })
-        */
 
-        val sampleDSList: List<DataSegment> = listOf(
+        /*
+        val sampleDSList: ArrayList<DataSegment> = arrayListOf(
             ImportantTextDataSegment(1,1,"Sample plain text object"),
             PlainTextDataSegment(1,1,"Sample plain text object"),
             PlainTextDataSegment(1,1,"Sample plain text object"),
@@ -87,6 +92,7 @@ class CreateNoteFragment : Fragment() {
         )
 
         dsAdapter.setList(sampleDSList)
+        */
     }
 
 }
