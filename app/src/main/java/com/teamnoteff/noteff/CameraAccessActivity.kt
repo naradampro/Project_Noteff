@@ -14,7 +14,7 @@ class CameraAccessActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_camera_access)
 
         imagePicker = findViewById(R.id.picker_image)
 
@@ -22,7 +22,6 @@ class CameraAccessActivity: AppCompatActivity() {
         val camera = findViewById<Button>(R.id.camera)
 
         gallery.setOnClickListener {
-
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop()
                 .maxResultSize(400, 400).start()
 
