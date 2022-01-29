@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.marginBottom
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -38,6 +39,8 @@ class CreateNoteFragment : Fragment() {
     ): View {
         binding= CreateNoteFragmentBinding.inflate(inflater,container,false)
 
+        binding.toggleButton.check(R.id.btnExisting)
+
 
         //Toggle group logics to select the note category
         binding.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
@@ -45,19 +48,16 @@ class CreateNoteFragment : Fragment() {
                 when (checkedId) {
                     R.id.btnExisting ->  {
                         binding.textInputLayout.visibility = View.VISIBLE
-                        binding.txtUncategorized.visibility = View.GONE
                         binding.txtLayoutNewCategory.visibility = View.GONE
                     }
 
                     R.id.btnNew -> {
-                        binding.txtUncategorized.visibility = View.GONE
                         binding.textInputLayout.visibility = View.GONE
                         binding.txtLayoutNewCategory.visibility = View.VISIBLE
                     }
 
                     R.id.btnUncategorized -> {
                         binding.textInputLayout.visibility = View.GONE
-                        //binding.txtUncategorized.visibility = View.VISIBLE
                         binding.txtLayoutNewCategory.visibility = View.GONE
                     }
                 }
