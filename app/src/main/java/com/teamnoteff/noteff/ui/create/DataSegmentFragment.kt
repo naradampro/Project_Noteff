@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.create
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +10,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.DataSegmentFragmentBinding
+import dev.ronnie.github.imagepicker.ImagePicker
+import dev.ronnie.github.imagepicker.ImageResult
 
 class DataSegmentFragment : DialogFragment() {
+
+    lateinit var imagePicker : ImagePicker
 
     companion object {
         fun newInstance() = DataSegmentFragment()
@@ -57,6 +62,27 @@ class DataSegmentFragment : DialogFragment() {
             dismiss()
         }
 
+        //access to the camera and gallery
+        imagePicker = ImagePicker(this)
+
+        //Camera
+        binding.takePhotoButton.setOnClickListener {
+            imagePicker.takeFromCamera { imageResult ->
+                imageCallBack(
+                    imageResult
+                )
+            }
+        }
+
+        //Gallery
+        binding.uploadImageButton.setOnClickListener {
+            imagePicker.pickFromStorage { imageResult ->
+                imageCallBack(
+                    imageResult
+                )
+            }
+        }
+
         return binding.root
     }
 
@@ -67,6 +93,20 @@ class DataSegmentFragment : DialogFragment() {
             lifecycleOwner = viewLifecycleOwner
             // Assign the view model to a property in the binding class
             viewModel = mainViewModel
+        }
+    }
+
+    //CallBack for result
+    private fun imageCallBack(imageResult: ImageResult<Uri>) {
+        when (imageResult) {
+            is ImageResult.Success -> {
+                val uri = imageResult.value
+                //imageView.setImageUri(uri)
+            }
+            /*is ImageResult.Failure -> {
+                val errorString = imageResult.errorString
+                Toast.makeText(activity, errorString, Toast.LENGTH_LONG).show()
+            }*/
         }
     }
 
