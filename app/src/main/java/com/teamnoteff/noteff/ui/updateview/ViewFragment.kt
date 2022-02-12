@@ -24,12 +24,6 @@ class ViewFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.view_fragment, container, false)
 
-        val btnModify : Button = view.findViewById(R.id.btnModify)
-
-        btnModify.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_viewFragment_to_modifyOrRemoveFragment)
-        }
-
         return view
     }
 

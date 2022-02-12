@@ -7,62 +7,6 @@
     android:orientation="vertical"
     tools:context=".ui.updateview.ViewFragment">
 
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp">
-
-            <Button
-                android:id="@+id/btnView"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btnModify"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Modify / Remove"
-                android:textAllCaps="false" />
-
-     </LinearLayout>
-
-    <!--<com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:singleSelection="true"
-        android:layout_gravity="right"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/btnExisting"
-            style="?attr/materialButtonOutlinedStyle"
-            android:backgroundTint="#F2F2F2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view"
-            android:textSize="14dp"
-            android:textAllCaps="false"/>
-
-        <Button
-            android:id="@+id/btnNew"
-            style="?attr/materialButtonOutlinedStyle"
-            android:backgroundTint="#F2F2F2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modify_remove"
-            android:textSize="14dp"
-            android:textAllCaps="false"/>
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>-->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="430dp"
