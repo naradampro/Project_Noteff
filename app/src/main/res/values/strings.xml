@@ -40,4 +40,10 @@
         <item>Remove</item>
     </string-array>
 
+    <string name="actionHelp">Help</string>
+    <string name="actionFAQ">FAQ</string>
+    <string name="actionWebsite">Official Website</string>
+    <string name="actionContact">Contact Us</string>
+    <string name="actionPrivacy">Terms and Privacy Policy</string>
+
 </resources>
