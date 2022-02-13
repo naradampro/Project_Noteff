@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="match_parent">
 
         <com.google.android.material.card.MaterialCardView
             app:cardElevation="10dp"
             app:cardCornerRadius="10dp"
             android:layout_margin="5dp"
             app:cardBackgroundColor="#FFFFFF"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_margin="15dp"
-                    android:src="@drawable/ic_important"
                     android:id="@+id/imageview"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/ic_important" />
 
                 <ImageButton
-                    android:src="@drawable/ic_delete"
-                    android:background="#55FFFFFF"
                     android:id="@+id/btnDelete"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_height="30dp"
+                    android:background="#55FFFFFF"
+                    android:src="@drawable/ic_delete" />
 
             </LinearLayout>
 

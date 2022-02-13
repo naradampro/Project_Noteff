@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.entities
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -13,5 +14,6 @@ class ImageDataSegment(
     override val noteId: Int,
 
     @ColumnInfo(name = "content")
-    val content:String
+    val content: String,
+    val uri: Uri
 ) : DataSegment
