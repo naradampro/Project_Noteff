@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".ui.common.AppSettingsFragment">
 
     <TextView
@@ -13,40 +15,24 @@
         android:text="Theme"
         android:textColor="#9B9B9B"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136" />
+        android:layout_margin="20dp"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="366dp"
-        android:layout_height="154dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.276">
+        app:cardUseCompatPadding="true">
 
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="109dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.236">
+            android:padding="20dp">
 
             <RadioButton
                 android:id="@+id/radioButton1"
@@ -54,13 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="Dark theme"
                 android:textColor="#9B9B9B"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.329"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.393" />
+                android:textSize="20sp" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
@@ -68,13 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="Light theme"
                 android:textColor="#9B9B9B"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.333"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.306" />
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/radioButton3"
@@ -82,12 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="Use my system theme"
                 android:textColor="#9B9B9B"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.227" />
+                android:textSize="20sp" />
 
         </RadioGroup>
     </androidx.cardview.widget.CardView>
@@ -99,29 +68,17 @@
         android:text="Security"
         android:textColor="#9B9B9B"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="20dp"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="366dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.641">
+        app:cardUseCompatPadding="true">
 
         <Switch
             android:id="@+id/switch1"
@@ -129,7 +86,8 @@
             android:layout_height="match_parent"
             android:text="Finger print"
             android:textColor="#9B9B9B"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:padding="20dp"/>
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -138,11 +96,6 @@
         android:layout_height="wrap_content"
         android:text="Reset App"
         android:onClick="showAlert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        android:layout_margin="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout></layout>
