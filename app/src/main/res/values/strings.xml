@@ -34,6 +34,18 @@
     <string name="modify_remove">Modify/Remove</string>
     <string name="save">Save</string>
 
+    <!--about_us_fragment-->
+    <string name="linktosite">
+        <a href="http://www.LICENCES.lk/">LICENSES</a>
+    </string>
+
+    <string name="linktosite1">
+        <a href="http://www.LICENCES.lk/">Developers</a>
+    </string>
+
+    <string name="about_title">Version V.1.0</string>
+    <!--about_us_fragment-->
+
     <string-array name="drop_down_list">
         <item>View</item>
         <item>Edit</item>
