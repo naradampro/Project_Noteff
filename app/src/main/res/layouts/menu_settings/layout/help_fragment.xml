@@ -8,105 +8,193 @@
     android:orientation="vertical">
 
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
     <LinearLayout
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_baseline_question_answer_24"
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
-        <TextView
-            android:text="@string/actionFAQ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"/>
-        <ImageView
-            android:src="@drawable/ic_baseline_arrow_drop_down_24"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="250dp"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_baseline_question_answer_24"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:text="@string/actionFAQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"/>
+            <ImageView
+                android:src="@drawable/ic_baseline_arrow_drop_up_24"
+                android:layout_marginStart="250dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
 
-    <LinearLayout
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_baseline_web_24"
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
-        <TextView
-            android:text="@string/actionWebsite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"/>
-    </LinearLayout>
-    <LinearLayout
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_baseline_contact_support_24"
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
-        <TextView
-            android:text="@string/actionContact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"/>
-    </LinearLayout>
-    <LinearLayout
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/ic_baseline_privacy_tip_24"
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
-        <TextView
-            android:text="@string/actionPrivacy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"/>
-    </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Q"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"/>
 
 
-</LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Q"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_baseline_web_24"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:text="@string/actionWebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"/>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_baseline_contact_support_24"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:text="@string/actionContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"/>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_baseline_privacy_tip_24"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+            <TextView
+                android:text="@string/actionPrivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
