@@ -2,14 +2,18 @@ package com.teamnoteff.noteff.ui.create
 
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.DataSegmentFragmentBinding
+import com.teamnoteff.noteff.entities.ImageDataSegment
+import com.teamnoteff.noteff.entities.PlainTextDataSegment
 import dev.ronnie.github.imagepicker.ImagePicker
 import dev.ronnie.github.imagepicker.ImageResult
 
@@ -101,12 +105,22 @@ class DataSegmentFragment : DialogFragment() {
         when (imageResult) {
             is ImageResult.Success -> {
                 val uri = imageResult.value
-                //imageView.setImageUri(uri)
+
+                //id and note id should be init later
+                val segment = ImageDataSegment(1,1,uri.toString(),uri)
+
+                mainViewModel.insertDataSegment(segment)
+
+                //invoking the parent fragment's functions to update recycler view
+                val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+                ps.displayDataSegmentList()
+
+                dismiss()
             }
-            /*is ImageResult.Failure -> {
+            is ImageResult.Failure -> {
                 val errorString = imageResult.errorString
                 Toast.makeText(activity, errorString, Toast.LENGTH_LONG).show()
-            }*/
+            }
         }
     }
 

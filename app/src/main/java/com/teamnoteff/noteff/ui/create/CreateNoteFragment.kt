@@ -74,7 +74,9 @@ class CreateNoteFragment : Fragment() {
         }
 
         binding.btnCreateNote.setOnClickListener {
-            TODO()
+            mainViewModel.datasegments.value?.forEach{
+                println(it)
+            }
         }
 
         return binding.root

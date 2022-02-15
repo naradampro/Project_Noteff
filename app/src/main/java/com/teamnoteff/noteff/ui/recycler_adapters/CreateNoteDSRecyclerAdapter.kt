@@ -3,8 +3,7 @@ package com.teamnoteff.noteff.ui.recycler_adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.teamnoteff.noteff.databinding.DsrvcardModifyImportantTextBinding
-import com.teamnoteff.noteff.databinding.DsrvcardModifyPlainTextBinding
+import com.teamnoteff.noteff.databinding.*
 import com.teamnoteff.noteff.entities.*
 
 class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -15,19 +14,28 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
         const val PLAIN_TEXT_VIEW_TYPE = 1
         const val IMPORTANT_TEXT_VIEW_TYPE = 2
         const val PHONENUMBER_VIEW_TYPE = 3
-        const val LINK_VIEW_TYPE = 4/*
-        const val IMAGE_VIEW_TYPE = 5*/
+        const val LINK_VIEW_TYPE = 4
+        const val IMAGE_VIEW_TYPE = 5
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (datasegments[position] is PlainTextDataSegment) {
-            return PLAIN_TEXT_VIEW_TYPE
-        }
-        else if (datasegments[position] is ImportantTextDataSegment) {
-            return IMPORTANT_TEXT_VIEW_TYPE
-        }
-        else{
-            return PLAIN_TEXT_VIEW_TYPE
+        return when {
+            datasegments[position] is PlainTextDataSegment -> {
+                PLAIN_TEXT_VIEW_TYPE
+            }
+            datasegments[position] is ImportantTextDataSegment -> {
+                IMPORTANT_TEXT_VIEW_TYPE
+            }
+            datasegments[position] is PhoneNumberDataSegment -> {
+                PHONENUMBER_VIEW_TYPE
+            }
+            datasegments[position] is LinkDataSegment -> {
+                LINK_VIEW_TYPE
+            }
+            datasegments[position] is ImageDataSegment -> {
+                IMAGE_VIEW_TYPE
+            }
+            else -> 0
         }
     }
 
@@ -44,21 +52,25 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
-            /*Other types also comes like this.
-            PHONENUMBER_VIEW_TYPE -> ImportantTextViewHolder(DsrvcardModifyPhoneNumberBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent, false))*/
-
-
             PLAIN_TEXT_VIEW_TYPE -> PlainTextViewHolder(DsrvcardModifyPlainTextBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false))
 
-            PHONENUMBER_VIEW_TYPE -> PhoneNumberViewHolder(DsrvcardModifyPlainTextBinding.inflate(
+            IMPORTANT_TEXT_VIEW_TYPE -> ImportantTextViewHolder(DsrvcardModifyImportantTextBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false))
 
-            IMPORTANT_TEXT_VIEW_TYPE -> ImportantTextViewHolder(DsrvcardModifyImportantTextBinding.inflate(
+            //uses plain text card
+            PHONENUMBER_VIEW_TYPE -> PhoneNumberViewHolder(DsrvcardModifyPhoneNumberBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
+
+            //uses plain text card
+            LINK_VIEW_TYPE -> LinkViewHolder(DsrvcardModifyLinkBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false))
+
+            IMAGE_VIEW_TYPE -> ImageViewHolder(DsrvcardRemoveImageBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false))
 
@@ -70,14 +82,22 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = datasegments[position]
-        if (holder is PlainTextViewHolder && item is PlainTextDataSegment) {
-            holder.bind(item)
-        }
-        else if (holder is ImportantTextViewHolder && item is ImportantTextDataSegment) {
-            holder.bind(item)
-        }
-        else if (holder is PhoneNumberViewHolder && item is PhoneNumberDataSegment) {
-            holder.bind(item)
+        when {
+            holder is PlainTextViewHolder && item is PlainTextDataSegment -> {
+                holder.bind(item)
+            }
+            holder is ImportantTextViewHolder && item is ImportantTextDataSegment -> {
+                holder.bind(item)
+            }
+            holder is PhoneNumberViewHolder && item is PhoneNumberDataSegment -> {
+                holder.bind(item)
+            }
+            holder is LinkViewHolder && item is LinkDataSegment -> {
+                holder.bind(item)
+            }
+            holder is ImageViewHolder && item is ImageDataSegment -> {
+                holder.bind(item)
+            }
         }
     }
 
@@ -93,9 +113,21 @@ class CreateNoteDSRecyclerAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>(
         }
     }
 
-    inner class PhoneNumberViewHolder(val binding: DsrvcardModifyPlainTextBinding): RecyclerView.ViewHolder(binding.root){
+    inner class PhoneNumberViewHolder(val binding: DsrvcardModifyPhoneNumberBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(segment: PhoneNumberDataSegment) {
-            binding.txtPlainDisplay.text = segment.content
+            binding.txtPhoneNumber.text = segment.content
+        }
+    }
+
+    inner class LinkViewHolder(val binding: DsrvcardModifyLinkBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(segment: LinkDataSegment) {
+            binding.txtLink.text = segment.content
+        }
+    }
+
+    inner class ImageViewHolder(val binding: DsrvcardRemoveImageBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(segment: ImageDataSegment) {
+            binding.imageview.setImageURI(segment.uri);
         }
     }
 
