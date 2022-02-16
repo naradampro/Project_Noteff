@@ -34,7 +34,7 @@ class MenuFragment : BottomSheetDialogFragment() {
         val btnAccount: ImageButton = view.findViewById(R.id.btnAccount)
 
         btnAccount.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_menu_to_accountFragment)
+            findNavController().navigate(R.id.action_navigation_menu_to_accountActivity)
         }
 
         val btnAboutUs: ImageButton = view.findViewById(R.id.btnAboutUs)

@@ -43,10 +43,6 @@
         tools:layout="@layout/menu_fragment" >
 
         <action
-            android:id="@+id/action_navigation_menu_to_accountFragment"
-            app:destination="@id/accountFragment" />
-
-        <action
             android:id="@+id/action_navigation_menu_to_appSettingsFragment"
             app:destination="@id/appSettingsFragment" />
         <action
@@ -55,14 +51,14 @@
         <action
             android:id="@+id/action_navigation_menu_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_navigation_menu_to_accountActivity"
+            app:destination="@id/accountActivity" />
+        <action
+            android:id="@+id/action_navigation_menu_to_nav_account"
+            app:destination="@id/nav_account" />
 
     </dialog>
-
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.teamnoteff.noteff.ui.common.AccountFragment"
-        android:label="account_fragment"
-        tools:layout="@layout/account_fragment" />
 
     <fragment
         android:id="@+id/appSettingsFragment"
@@ -82,5 +78,11 @@
         android:name="com.teamnoteff.noteff.ui.common.AboutUsFragment"
         android:label="about_us_fragment"
         tools:layout="@layout/about_us_fragment" />
+    <activity
+        android:id="@+id/accountActivity"
+        android:name="com.teamnoteff.noteff.ui.common.AccountActivity"
+        android:label="activity_account"
+        tools:layout="@layout/activity_account" />
+    <include app:graph="@navigation/nav_account" />
 
 </navigation>

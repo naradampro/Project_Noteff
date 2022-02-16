@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="Change Pin"
+        android:textColor="@color/blue_default"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        tools:ignore="MissingClass">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lock"
+            android:layout_gravity="center_horizontal"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your current pincode"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cursorVisible="false"
+            app:inputType="number"
+            app:password="true"
+            app:pinBackground="@drawable/ic_pin_view"
+            app:pinHeight="30dp"
+            app:pinLength="4"
+            app:pinWidth="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your new pincode"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/nPinView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cursorVisible="false"
+            app:inputType="number"
+            app:password="true"
+            app:pinBackground="@drawable/ic_pin_view"
+            app:pinHeight="30dp"
+            app:pinLength="4"
+            app:pinWidth="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm your pincode"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/cPinView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cursorVisible="false"
+            app:inputType="number"
+            app:password="true"
+            app:pinBackground="@drawable/ic_pin_view"
+            app:pinHeight="30dp"
+            app:pinLength="4"
+            app:pinWidth="30dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="18dp"
+        android:textSize="12sp"
+        android:text="change Pin"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+</LinearLayout>
