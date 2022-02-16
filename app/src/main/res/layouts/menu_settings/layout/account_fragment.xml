@@ -21,7 +21,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/purple_500"
+                android:background="@color/blue_default"
                 android:orientation="horizontal"
                 android:padding="20dp">
 
@@ -31,7 +31,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
                     android:gravity="center"
-                    android:text="@string/actionProfile"
+                    android:text="Profile"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -44,7 +44,7 @@
                 android:orientation="vertical">
 
                 <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@imUProfile+id/"
+                    android:id="@+id/imUProfile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
@@ -93,7 +93,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -107,7 +106,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -121,7 +119,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp"
                     android:inputType="textEmailAddress"/>
 
@@ -143,7 +140,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_500"
+                android:background="@color/blue_default"
                 android:orientation="horizontal"
                 android:padding="20dp">
 
@@ -153,7 +150,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
                     android:gravity="center"
-                    android:text="@string/actionPassword"
+                    android:text="Change Password"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -176,7 +173,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -190,7 +186,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -204,7 +199,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <Button
@@ -226,7 +220,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_500"
+                android:background="@color/blue_default"
                 android:orientation="horizontal"
                 android:padding="20dp">
 
@@ -236,7 +230,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
                     android:gravity="center"
-                    android:text="@string/actionPin"
+                    android:text="Change Pin"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -259,7 +253,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -273,7 +266,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <EditText
@@ -287,7 +279,6 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textColorHint="@color/gray_default"
                     android:textSize="20dp" />
 
                 <Button
