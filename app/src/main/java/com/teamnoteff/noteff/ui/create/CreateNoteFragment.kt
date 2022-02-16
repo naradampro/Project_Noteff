@@ -1,26 +1,17 @@
 package com.teamnoteff.noteff.ui.create
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.view.marginBottom
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
-import com.teamnoteff.noteff.entities.DataSegment
-import com.teamnoteff.noteff.entities.ImportantTextDataSegment
-import com.teamnoteff.noteff.entities.PhoneNumberDataSegment
-import com.teamnoteff.noteff.entities.PlainTextDataSegment
 import com.teamnoteff.noteff.ui.recycler_adapters.CreateNoteDSRecyclerAdapter
 
 class CreateNoteFragment : Fragment() {
@@ -92,7 +83,7 @@ class CreateNoteFragment : Fragment() {
             viewModel = mainViewModel
         }
 
-        dsAdapter = CreateNoteDSRecyclerAdapter()
+        dsAdapter = CreateNoteDSRecyclerAdapter(mainViewModel,viewLifecycleOwner,parentFragment)
 
         initDataSegmnetsList()
     }

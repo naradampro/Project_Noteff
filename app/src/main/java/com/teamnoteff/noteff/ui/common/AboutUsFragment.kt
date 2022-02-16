@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.AboutUsFragmentBinding
 import com.teamnoteff.noteff.ui.create.CreateNoteFragment
+
 
 class AboutUsFragment : Fragment() {
     companion object {
@@ -23,34 +25,45 @@ class AboutUsFragment : Fragment() {
     ): View {
         binding= AboutUsFragmentBinding.inflate(inflater,container,false)
 
-        /*Narada*/
+        //val devCard: View =
+            LayoutInflater.from(context).inflate(R.layout.dev_details_card, null) as View
+
+        //val rootLayout: ViewGroup = binding.mainLayout
+        //rootLayout.addView(devCard)
+
+        //Developer Narada Abeykoon
+        val devNarada = Developer(
+            "Narada Abeykoon",
+            "naradampro@gmail.com",
+            "https://www.linkedin.com/in/naradaabeykoon",
+            "https://www.github.com/naradampro")
         binding.imageButton1.setOnClickListener {
-            val url = "http://www.naradampro@gmail.com"
-            val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(url)
-            startActivity(i)
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:"+devNarada.name)
+            }
+            startActivity(Intent.createChooser(emailIntent, "Send feedback"))
         }
 
         binding.imageButton2.setOnClickListener{
-            val url = "https://www.linkedin.com/in/naradaabeykoon"
             val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(url)
+            i.data = Uri.parse(devNarada.linkedInProfile)
             startActivity(i)
         }
 
         binding.imageButton3.setOnClickListener{
-            val url = "https://www.github.com/naradampro"
             val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(url)
+            i.data = Uri.parse(devNarada.gitHubProfile)
             startActivity(i)
         }
 
+
+
         /*Oshani*/
         binding.imageButton4.setOnClickListener{
-            val url = "http://oshani110@gmail.com"
-            val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(url)
-            startActivity(i)
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:"+"oshani110@gmail.com")
+            }
+            startActivity(Intent.createChooser(emailIntent, "Send feedback"))
         }
 
         binding.imageButton5.setOnClickListener{
@@ -134,4 +147,11 @@ class AboutUsFragment : Fragment() {
         }
         return binding.root
     }
+
+    data class Developer(
+        val name:String,
+        val email:String,
+        val linkedInProfile:String,
+        val gitHubProfile:String
+    )
 }

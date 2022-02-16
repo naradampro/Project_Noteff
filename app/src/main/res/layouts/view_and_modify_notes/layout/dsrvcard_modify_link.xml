@@ -1,68 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
-
-    <com.google.android.material.card.MaterialCardView
-        app:cardElevation="10dp"
-        app:cardCornerRadius="10dp"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#FFFFFF"
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="#FFFFFF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@drawable/ic_link"
-                android:id="@+id/important_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"/>
-
-            <TextView
-                android:id="@+id/txtLink"
-                android:layout_width="250dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textColor="@color/blue_default"
-                android:text="This is Link "
-                android:textSize="16dp"
-                android:layout_gravity="center_vertical"/>
+                android:orientation="horizontal">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                <ImageButton
-                    android:src="@drawable/ic_edit"
-                    android:background="#55FFFFFF"
-                    android:id="@+id/btnEdit"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="2dp"/>
+                    <ImageView
+                        android:id="@+id/important_img"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ds_ic_link" />
 
-                <ImageButton
-                    android:src="@drawable/ic_delete"
-                    android:background="#55FFFFFF"
-                    android:id="@+id/btnDelete"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    <TextView
+                        android:id="@+id/txtLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="www.noteff.com"
+                        android:textColor="@color/blue_default"
+                        android:textSize="16sp" />
 
-            </LinearLayout>
+                </LinearLayout>
 
-        </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp">
 
-    </com.google.android.material.card.MaterialCardView>
+                    <ImageButton
+                        android:src="@drawable/ic_edit"
+                        android:background="#55FFFFFF"
+                        android:id="@+id/btnEdit"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
 
+                    <ImageButton
+                        android:src="@drawable/ic_delete"
+                        android:background="#55FFFFFF"
+                        android:id="@+id/btnDelete"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="5dp"/>
 
-</LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout></layout>

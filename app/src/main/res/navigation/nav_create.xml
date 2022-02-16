@@ -58,6 +58,12 @@
         <action
             android:id="@+id/action_createNoteFragment_to_dataSegmentFragment"
             app:destination="@id/dataSegmentFragment" />
+        <action
+            android:id="@+id/action_createNoteFragment_to_importantTextFragment"
+            app:destination="@id/importantTextFragment" />
+        <action
+            android:id="@+id/action_createNoteFragment_to_plainTextFragment"
+            app:destination="@id/plainTextFragment" />
     </fragment>
 
 </navigation>

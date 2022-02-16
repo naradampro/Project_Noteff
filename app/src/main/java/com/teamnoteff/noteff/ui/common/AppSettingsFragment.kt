@@ -1,18 +1,13 @@
 package com.teamnoteff.noteff.ui.common
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.DialogInterface
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil.setContentView
-import com.teamnoteff.noteff.R
-import com.teamnoteff.noteff.databinding.AboutUsFragmentBinding
+import androidx.fragment.app.Fragment
 import com.teamnoteff.noteff.databinding.AppSettingsFragmentBinding
 import com.teamnoteff.noteff.ui.create.CreateNoteFragment
 
