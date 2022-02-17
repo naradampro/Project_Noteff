@@ -13,5 +13,7 @@ class LinkDataSegment(
     override val noteId: Int,
 
     @ColumnInfo(name = "content")
-    val content:String
-) : DataSegment
+    var content:String
+) : DataSegment{
+    constructor(content: String) : this(0,0,content)
+}

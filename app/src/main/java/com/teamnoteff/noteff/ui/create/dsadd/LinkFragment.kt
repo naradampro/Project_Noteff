@@ -36,23 +36,47 @@ class LinkFragment : DialogFragment() {
             dismiss()
         }
 
-        //Link data segment adding logic
-        binding.btnAdd.setOnClickListener{
-            val content = binding.etNoteTitle.text.toString()
-
-            //id and note id should be init later
-            val segment = LinkDataSegment(1,1, content)
-
-            mainViewModel.insertDataSegment(segment)
-
-            //invoking the parent fragment's functions to update recycler view
-            val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
-            ps.displayDataSegmentList()
-
-            dismiss()
+        if(arguments==null){
+            binding.btnAdd.setOnClickListener {
+                addSegmentToRecyclerView()
+            }
+        }
+        else{
+            val index = arguments?.getInt("index")
+            val content = arguments?.getString("content").toString()
+            binding.etNoteTitle.setText(content)
+            binding.btnAdd.text = "Update"
+            binding.btnAdd.setOnClickListener {
+                updateSegmentToRecyclerView(index!!)
+            }
         }
 
         return binding.root
+    }
+
+    private fun addSegmentToRecyclerView(){
+        val content = binding.etNoteTitle.text.toString()
+
+        //id and note id should be init later
+        val segment = LinkDataSegment(content)
+
+        mainViewModel.insertDataSegment(segment)
+
+        //invoking the parent fragment's functions to update recycler view
+        val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+        ps.displayDataSegmentList()
+
+        dismiss()
+    }
+
+    private fun updateSegmentToRecyclerView(index:Int){
+        val content = binding.etNoteTitle.text.toString()
+        mainViewModel.updateDataSegment(index,content)
+        //invoking the parent fragment's functions to update recycler view
+        val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+        ps.displayDataSegmentList()
+
+        dismiss()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

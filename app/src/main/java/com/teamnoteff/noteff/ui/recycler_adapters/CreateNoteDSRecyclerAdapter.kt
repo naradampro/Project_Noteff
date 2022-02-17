@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.recycler_adapters
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -55,6 +56,7 @@ class CreateNoteDSRecyclerAdapter(
         return datasegments.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(segments: List<DataSegment>) {
         this.datasegments.clear()
         this.datasegments.addAll(segments)
@@ -144,6 +146,14 @@ class CreateNoteDSRecyclerAdapter(
             binding.btnDelete.setOnClickListener {
                 deleteSegment(segment)
             }
+
+            binding.btnEdit.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("content",segment.content)
+                bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
+                println(mainViewModel.datasegments.value?.indexOf(segment)!!)
+                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_importantTextFragment,bundle)
+            }
         }
     }
 
@@ -153,6 +163,14 @@ class CreateNoteDSRecyclerAdapter(
 
             binding.btnDelete.setOnClickListener {
                 deleteSegment(segment)
+            }
+
+            binding.btnEdit.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("content",segment.content)
+                bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
+                println(mainViewModel.datasegments.value?.indexOf(segment)!!)
+                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_plainTextFragment,bundle)
             }
         }
     }
@@ -164,12 +182,20 @@ class CreateNoteDSRecyclerAdapter(
             binding.btnDelete.setOnClickListener {
                 deleteSegment(segment)
             }
+
+            binding.btnEdit.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("content",segment.content)
+                bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
+                println(mainViewModel.datasegments.value?.indexOf(segment)!!)
+                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_plainTextFragment,bundle)
+            }
         }
     }
 
     inner class ImageViewHolder(val binding: DsrvcardRemoveImageBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(segment: ImageDataSegment) {
-            binding.imageview.setImageURI(segment.uri);
+            binding.imageview.setImageURI(segment.uri)
 
             binding.btnDelete.setOnClickListener {
                 deleteSegment(segment)

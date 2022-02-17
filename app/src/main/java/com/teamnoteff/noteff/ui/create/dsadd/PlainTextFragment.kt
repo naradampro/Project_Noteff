@@ -43,12 +43,9 @@ class PlainTextFragment : DialogFragment() {
             val index = arguments?.getInt("index")
             val content = arguments?.getString("content").toString()
             binding.etNoteTitle.setText(content)
+            binding.btnAdd.text = "Update"
             binding.btnAdd.setOnClickListener {
-
                 updateSegmentToRecyclerView(index!!)
-                println(index)
-                println(content)
-
             }
         }
 
