@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import com.teamnoteff.noteff.entities.Note
 import com.teamnoteff.noteff.entities.NoteCategory
 import com.teamnoteff.noteff.entities.PlainTextDataSegment
+import com.teamnoteff.noteff.entities.UserConfig
 
 
 @Database(
@@ -14,7 +15,8 @@ import com.teamnoteff.noteff.entities.PlainTextDataSegment
     [
         Note::class,
         NoteCategory::class,
-        PlainTextDataSegment::class
+        PlainTextDataSegment::class,
+        UserConfig::class
     ],
     version = 1,
     exportSchema = false
@@ -23,6 +25,7 @@ abstract class NoteffDatabase: RoomDatabase() {
 
     abstract val noteDao: NoteDao
     abstract val noteCategoryDao: NoteCategoryDao
+    abstract val userConfigDao: UserConfigDao
 
     companion object {
         @Volatile
