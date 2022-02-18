@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -48,10 +49,13 @@ class WelcomeFragment : Fragment() {
 
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
+
+
+
         binding.btnStart.setOnClickListener {
-            val fName = binding.etFNameText.text.toString()
-            val lName = binding.etLNameText.text.toString()
-            val email = binding.etEmailText.text.toString()
+            val fName = binding.etFNameText.text.toString().trim()
+            val lName = binding.etLNameText.text.toString().trim()
+            val email = binding.etEmailText.text.toString().trim()
 
 
             if (fName.isEmpty()){
@@ -87,7 +91,7 @@ class WelcomeFragment : Fragment() {
             }
 
 
-            
+
         }
 
         return binding.root
