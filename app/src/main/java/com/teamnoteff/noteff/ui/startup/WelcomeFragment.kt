@@ -48,8 +48,6 @@ class WelcomeFragment : Fragment() {
 
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-
-
         binding.btnStart.setOnClickListener {
             val fName = binding.etFNameText.text.toString()
             val lName = binding.etLNameText.text.toString()

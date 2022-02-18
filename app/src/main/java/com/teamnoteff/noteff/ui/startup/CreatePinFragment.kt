@@ -21,7 +21,7 @@ class CreatePinFragment : Fragment() {
         fun newInstance() = CreatePinFragment()
     }
 
-    private lateinit var viewModel: CreatePinViewModel
+    //private lateinit var viewModel: CreatePinViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,11 +42,4 @@ class CreatePinFragment : Fragment() {
 
         return binding.root
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[CreatePinViewModel::class.java]
-        // TODO: Use the ViewModel
-    }
-
 }
