@@ -43,8 +43,6 @@ class WelcomeFragment : Fragment() {
 
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
-
-
         binding.btnStart.setOnClickListener {
             viewPager?.currentItem = 1
         }

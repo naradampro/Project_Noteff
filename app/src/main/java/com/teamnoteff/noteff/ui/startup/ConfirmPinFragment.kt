@@ -22,7 +22,7 @@ class ConfirmPinFragment : Fragment() {
         fun newInstance() = ConfirmPinFragment()
     }
 
-    private lateinit var viewModel: ConfirmPinViewModel
+    //private lateinit var viewModel: ConfirmPinViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,11 +52,4 @@ class ConfirmPinFragment : Fragment() {
         editor.putBoolean("Finished", true)
         editor.apply()
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[ConfirmPinViewModel::class.java]
-        // TODO: Use the ViewModel
-    }
-
 }

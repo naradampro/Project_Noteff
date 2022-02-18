@@ -20,7 +20,7 @@ class SetPasswordFragment : Fragment() {
         fun newInstance() = SetPasswordFragment()
     }
 
-    private lateinit var viewModel: SetPasswordViewModel
+    //private lateinit var viewModel: SetPasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +31,10 @@ class SetPasswordFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnNext.setOnClickListener {
+
+            //validate confirm password
+
+
             viewPager?.currentItem = 2
         }
 
@@ -39,11 +43,4 @@ class SetPasswordFragment : Fragment() {
         }
         return binding.root
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[SetPasswordViewModel::class.java]
-        // TODO: Use the ViewModel
-    }
-
 }
