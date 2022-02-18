@@ -84,7 +84,7 @@ class WelcomeFragment : Fragment() {
 
            else{
                 viewPager?.currentItem = 1
-            }
+           }
 
 
             

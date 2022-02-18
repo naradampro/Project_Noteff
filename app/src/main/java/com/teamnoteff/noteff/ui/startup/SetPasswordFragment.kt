@@ -13,8 +13,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.SetPasswordFragmentBinding
 import com.teamnoteff.noteff.databinding.WelcomeFragmentBinding
+import java.util.regex.Pattern
 
 class SetPasswordFragment : Fragment() {
+
+    private val textPattern = "[A-Za-z]"
+
     private lateinit var binding: SetPasswordFragmentBinding
     companion object {
         fun newInstance() = SetPasswordFragment()
@@ -34,6 +38,26 @@ class SetPasswordFragment : Fragment() {
 
             //validate confirm password
 
+            val password = binding.etNPwdText.text.toString()
+            val confirmpassword = binding.etCNPwdText.text.toString()
+
+            if (password.isEmpty()) {
+                binding.etNPwdText.error = "Password Required"
+                return@setOnClickListener
+            }
+            else if(!password.matches(textPattern.toRegex())){
+                binding.etNPwdText.error = "Incorrect Password"
+                return@setOnClickListener
+            }
+
+            else if (confirmpassword.isEmpty()) {
+                binding.etCNPwdText.error = "Password Required"
+                return@setOnClickListener
+            }
+            else if(!confirmpassword.matches(textPattern.toRegex())){
+                binding.etCNPwdText.error = "Incorrect Password"
+                return@setOnClickListener
+            }
 
             viewPager?.currentItem = 2
         }
