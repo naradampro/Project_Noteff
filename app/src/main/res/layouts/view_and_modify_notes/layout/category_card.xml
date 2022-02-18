@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="wrap_content" >
 
@@ -12,33 +12,37 @@
         android:layout_margin="5dp"
         app:cardBackgroundColor="@color/blue_default"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="15dp">
 
             <TextView
                 android:id="@+id/txtDisplay"
-                android:layout_margin="10dp"
-                android:textColor="@color/white"
-                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="70dp"
                 android:text="My warranty cards"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"/>
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <ImageView
-                android:layout_margin="10dp"
-                android:src="@drawable/ic_dropdown"
                 android:id="@+id/dropdown"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center_vertical"/>
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_dropdown" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
