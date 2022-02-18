@@ -8,17 +8,17 @@ import kotlinx.coroutines.flow.Flow
 interface UserConfigDao {
 
     @Insert
-    suspend fun insertNote(userConfig: UserConfig):Long
+    suspend fun insertUserConfig(userConfig: UserConfig):Long
 
     @Update
-    suspend fun updateNote(userConfig: UserConfig):Int
+    suspend fun updateUserConfig(userConfig: UserConfig):Int
 
     @Delete
-    suspend fun deleteNote(userConfig: UserConfig):Int
+    suspend fun deleteUserConfig(userConfig: UserConfig):Int
 
     @Query("DELETE FROM user_config_table")
     suspend fun deleteAll():Int
 
     @Query("SELECT * FROM user_config_table")
-    fun getAllNotes():Flow<List<UserConfig>>
+    fun getAllUserConfigs():Flow<List<UserConfig>>
 }
