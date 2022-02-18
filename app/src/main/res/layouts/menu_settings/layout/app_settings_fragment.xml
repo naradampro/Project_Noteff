@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Theme"
-        android:textColor="#9B9B9B"
+        android:textColor="@color/blue_default"
         android:textSize="20dp"
         android:layout_margin="20dp"/>
 
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Security"
-        android:textColor="#9B9B9B"
+        android:textColor="@color/blue_default"
         android:textSize="20dp"
         android:layout_margin="20dp"/>
 
@@ -90,12 +90,36 @@
             android:padding="20dp"/>
     </androidx.cardview.widget.CardView>
 
+
     <Button
-        android:id="@+id/alertButton"
+        android:layout_gravity="center"
+        android:id="@+id/btnSave"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/dangertxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Danger Zone"
+        android:textColor="#FB9292"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnReset"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#9B9B9B"
         android:text="Reset App"
-        android:onClick="showAlert"
-        android:layout_margin="20dp"/>
+        android:onClick="showAlert" />
+
+
+
 
 </LinearLayout></layout>
