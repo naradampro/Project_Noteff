@@ -54,9 +54,6 @@
         <action
             android:id="@+id/action_navigation_menu_to_accountActivity"
             app:destination="@id/accountActivity" />
-        <action
-            android:id="@+id/action_navigation_menu_to_nav_account"
-            app:destination="@id/nav_account" />
 
     </dialog>
 
@@ -83,6 +80,5 @@
         android:name="com.teamnoteff.noteff.ui.common.AccountActivity"
         android:label="activity_account"
         tools:layout="@layout/activity_account" />
-    <include app:graph="@navigation/nav_account" />
 
 </navigation>
