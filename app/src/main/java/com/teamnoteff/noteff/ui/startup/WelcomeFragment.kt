@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.WelcomeFragmentBinding
+import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
 
 class WelcomeFragment : Fragment() {
 
@@ -19,7 +21,7 @@ class WelcomeFragment : Fragment() {
         fun newInstance() = WelcomeFragment()
     }
 
-    private lateinit var viewModel: WelcomeViewModel
+    //private val mainViewModel: StartUpViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +32,10 @@ class WelcomeFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnStart.setOnClickListener {
+            val fName = binding.etFNameText.text.toString()
+
+            
+
             viewPager?.currentItem = 1
         }
 
@@ -39,7 +45,6 @@ class WelcomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[WelcomeViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

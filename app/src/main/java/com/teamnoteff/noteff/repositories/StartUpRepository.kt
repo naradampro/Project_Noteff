@@ -26,22 +26,7 @@ class StartUpRepository(private val userConfigDao: UserConfigDao, private val no
         return userConfigDao.deleteAll()
     }
 
-
-    val categories = noteCategoryDao.getAllCategories()
-
     suspend fun insert(category: NoteCategory): Long {
         return noteCategoryDao.insertCategory(category)
-    }
-
-    suspend fun update(category: NoteCategory): Int{
-        return noteCategoryDao.updateCategory(category)
-    }
-
-    suspend fun delete(category: NoteCategory): Int{
-        return noteCategoryDao.deleteCategory(category)
-    }
-
-    suspend fun deleteAll(category: NoteCategory):Int {
-        return noteCategoryDao.deleteAll()
     }
 }

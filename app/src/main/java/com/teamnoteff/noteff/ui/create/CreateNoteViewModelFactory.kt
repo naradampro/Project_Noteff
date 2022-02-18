@@ -3,8 +3,6 @@ package com.teamnoteff.noteff.ui.create
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.teamnoteff.noteff.repositories.NoteCreationRepository
-import com.teamnoteff.noteff.repositories.NoteRepository
-import com.teamnoteff.noteff.ui.common.NotesViewModel
 
 class CreateNoteViewModelFactory(
     private val noteCreationRepository: NoteCreationRepository
