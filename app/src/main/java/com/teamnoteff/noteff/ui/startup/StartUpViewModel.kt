@@ -1,4 +1,7 @@
 package com.teamnoteff.noteff.ui.startup
 
-class StartUpViewModel {
+import com.teamnoteff.noteff.repositories.StartUpRepository
+
+class StartUpViewModel(private val repository: StartUpRepository
+) {
 }
