@@ -82,10 +82,12 @@ class WelcomeFragment : Fragment() {
                 return@setOnClickListener
             }
 
-           
+           else{
+                viewPager?.currentItem = 1
+            }
 
 
-            viewPager?.currentItem = 1
+            
         }
 
         return binding.root
