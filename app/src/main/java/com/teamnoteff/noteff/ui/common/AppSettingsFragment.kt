@@ -24,7 +24,7 @@ class AppSettingsFragment : Fragment() {
     ): View {
         binding= AppSettingsFragmentBinding.inflate(inflater,container,false)
 
-        binding.alertButton.setOnClickListener {
+        binding.btnReset.setOnClickListener {
             showResetAlert()
         }
 
