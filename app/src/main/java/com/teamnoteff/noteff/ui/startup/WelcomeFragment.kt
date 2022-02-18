@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -17,7 +18,7 @@ class WelcomeFragment : Fragment() {
 
     private lateinit var binding: WelcomeFragmentBinding
     private val emailPattern = "[a-zA-Z0-9._]+@[a-z]+\\.+[a-z]+"
-    private val textPattern = "[A-Za-z]"
+    private val textPattern = "^[A-Za-z]+$"
 
 
 
@@ -46,12 +47,14 @@ class WelcomeFragment : Fragment() {
     ): View? {
         binding= DataBindingUtil.inflate(inflater,R.layout.welcome_fragment,container,false)
 
+
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
+
         binding.btnStart.setOnClickListener {
-            val fName = binding.etFNameText.text.toString()
-            val lName = binding.etLNameText.text.toString()
-            val email = binding.etEmailText.text.toString()
+            val fName = binding.etFNameText.text.toString().trim()
+            val lName = binding.etLNameText.text.toString().trim()
+            val email = binding.etEmailText.text.toString().trim()
 
 
             if (fName.isEmpty()){
@@ -60,20 +63,22 @@ class WelcomeFragment : Fragment() {
             }
             else if (!fName.matches(textPattern.toRegex())){
                 binding.etFNameText.error="Incorrect Name Pattern"
+                return@setOnClickListener
             }
 
 
-            else if (lName.isEmpty()){
+            if (lName.isEmpty()){
                 binding.etLNameText.error="Last Name Required"
                 return@setOnClickListener
             }
             else if (!lName.matches(textPattern.toRegex())){
                 binding.etLNameText.error="Incorrect Name Pattern"
+                return@setOnClickListener
 
             }
 
 
-            else if(email.isEmpty()){
+            if(email.isEmpty()){
                 binding.etEmailText.error="Email Required"
                 return@setOnClickListener
             }
@@ -82,12 +87,14 @@ class WelcomeFragment : Fragment() {
                 return@setOnClickListener
             }
 
-           else{
+
+
+            else{
                 viewPager?.currentItem = 1
            }
 
 
-            
+
         }
 
         return binding.root
