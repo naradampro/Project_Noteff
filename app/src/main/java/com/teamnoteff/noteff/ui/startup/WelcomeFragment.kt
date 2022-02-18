@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -15,6 +16,8 @@ import com.teamnoteff.noteff.entities.UserConfig
 class WelcomeFragment : Fragment() {
 
     private lateinit var binding: WelcomeFragmentBinding
+    private val emailPattern = "[a-zA-Z0-9._]+@[a-z]+\\.+[a-z]+"
+    private val textPattern = "[A-Za-z]"
 
 
 
@@ -49,17 +52,39 @@ class WelcomeFragment : Fragment() {
 
         binding.btnStart.setOnClickListener {
             val fName = binding.etFNameText.text.toString()
-            val lname = binding.etLNameText.text.toString()
+            val lName = binding.etLNameText.text.toString()
             val email = binding.etEmailText.text.toString()
+
 
             if (fName.isEmpty()){
                 binding.etFNameText.error="First Name Required"
                 return@setOnClickListener
             }
-            else if (!fName.matches("[a-]")){
+            else if (!fName.matches(textPattern.toRegex())){
+                binding.etFNameText.error="Incorrect Name Pattern"
+            }
+
+
+            else if (lName.isEmpty()){
+                binding.etLNameText.error="Last Name Required"
+                return@setOnClickListener
+            }
+            else if (!lName.matches(textPattern.toRegex())){
+                binding.etLNameText.error="Incorrect Name Pattern"
 
             }
 
+
+            else if(email.isEmpty()){
+                binding.etEmailText.error="Email Required"
+                return@setOnClickListener
+            }
+            else if (!email.matches(emailPattern.toRegex())){
+                binding.etEmailText.error="Invalid Email Address"
+                return@setOnClickListener
+            }
+
+           
 
 
             viewPager?.currentItem = 1
