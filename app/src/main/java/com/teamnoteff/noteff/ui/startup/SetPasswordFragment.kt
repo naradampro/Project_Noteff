@@ -47,7 +47,6 @@ class SetPasswordFragment : Fragment() {
             }
             else if(!password.matches(textPattern.toRegex())){
                 binding.etNPwdText.error = "Incorrect Password"
-                return@setOnClickListener
             }
 
             else if (confirmpassword.isEmpty()) {
