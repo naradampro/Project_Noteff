@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.recycler_adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -29,9 +30,11 @@ class CategoryNotesRecyclerAdapter : RecyclerView.Adapter<CategoryNotesRecyclerA
         return notesList.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(notes: List<Note>) {
         notesList.clear()
         notesList.addAll(notes)
+        notifyDataSetChanged()
     }
 
 
