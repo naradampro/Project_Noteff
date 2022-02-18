@@ -16,5 +16,7 @@ class Note (
     @ColumnInfo(name = "display_text")
     val displaytext: String
 ){
+    constructor(title:String,displaytext:String):this(0,title,displaytext)
+
     //val dataSegments:List<DataSegment>()
 }

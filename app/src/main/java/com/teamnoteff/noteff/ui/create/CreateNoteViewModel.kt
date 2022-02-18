@@ -2,11 +2,14 @@ package com.teamnoteff.noteff.ui.create
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.teamnoteff.noteff.entities.*
+import com.teamnoteff.noteff.repositories.NoteCreationRepository
 import com.teamnoteff.noteff.repositories.NoteRepository
+import kotlinx.coroutines.launch
 
 class CreateNoteViewModel(
-    private val noteRepository: NoteRepository
+    private val repository: NoteCreationRepository
     ) : ViewModel() {
 
     //data segment list
@@ -18,6 +21,14 @@ class CreateNoteViewModel(
 
     fun removeDataSegment(segment: DataSegment){
         datasegments.value?.remove(segment)
+    }
+
+    fun saveNote(note: Note) = viewModelScope.launch {
+        repository.insertNote(note)
+    }
+
+    fun saveCategory(category: NoteCategory) = viewModelScope.launch {
+        repository.insertCategory(category)
     }
 
     fun updateDataSegment(index:Int,content: String){
@@ -41,5 +52,7 @@ class CreateNoteViewModel(
         }
 
     }
+
+
 
 }

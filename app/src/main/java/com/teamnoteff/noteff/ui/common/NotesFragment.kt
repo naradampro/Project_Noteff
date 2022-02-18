@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.NotesFragmentBinding
 import com.teamnoteff.noteff.db.NoteffDatabase
+import com.teamnoteff.noteff.repositories.NoteCreationRepository
 import com.teamnoteff.noteff.repositories.NoteRepository
 import com.teamnoteff.noteff.ui.create.CreateNoteActivity
 import com.teamnoteff.noteff.ui.recycler_adapters.ViewAllNotesRecyclerAdapter

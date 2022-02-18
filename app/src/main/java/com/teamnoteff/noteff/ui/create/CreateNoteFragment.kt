@@ -1,6 +1,7 @@
 package com.teamnoteff.noteff.ui.create
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.teamnoteff.noteff.MainActivity
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
+import com.teamnoteff.noteff.entities.Note
+import com.teamnoteff.noteff.entities.NoteCategory
 import com.teamnoteff.noteff.ui.recycler_adapters.CreateNoteDSRecyclerAdapter
 
 class CreateNoteFragment : Fragment() {
@@ -65,9 +69,24 @@ class CreateNoteFragment : Fragment() {
         }
 
         binding.btnCreateNote.setOnClickListener {
-            mainViewModel.datasegments.value?.forEach{
-                println(it)
+            val title = binding.etNoteTitle.text.toString()
+            val displaytext = binding.etDisplayText.text.toString()
+            val note = Note(title,displaytext)
+
+            if(binding.txtLayoutNewCategory.visibility == View.VISIBLE){
+                val categoryName = binding.txtNewCategory.text.toString()
+                val category = NoteCategory(0, categoryName)
+                mainViewModel.saveCategory(category)
             }
+            else if(binding.textInputLayout.visibility == View.VISIBLE){
+                val categoryName = "Existing"
+            }
+            else{
+                val categoryName = "Uncategorized"
+            }
+
+            mainViewModel.saveNote(note)
+            startActivity(Intent(activity, MainActivity::class.java))
         }
 
         return binding.root
@@ -107,20 +126,6 @@ class CreateNoteFragment : Fragment() {
         mainViewModel.datasegments.observe(viewLifecycleOwner) {
             dsAdapter.setList(it)
         }
-
-        /*
-        val sampleDSList: ArrayList<DataSegment> = arrayListOf(
-            ImportantTextDataSegment(1,1,"Sample plain text object"),
-            PlainTextDataSegment(1,1,"Sample plain text object"),
-            PlainTextDataSegment(1,1,"Sample plain text object"),
-            PhoneNumberDataSegment(1,1,"0702093914"),
-            ImportantTextDataSegment(1,1,"Sample plain text object"),
-            PlainTextDataSegment(1,1,"Sample plain text object"),
-            ImportantTextDataSegment(1,1,"Sample plain text object")
-        )
-
-        dsAdapter.setList(sampleDSList)
-        */
     }
 
 }
