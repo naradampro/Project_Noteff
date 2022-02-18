@@ -14,5 +14,5 @@ class UserConfig (
     val property: String,
 
     @ColumnInfo(name = "value")
-    val value: String
+    val value: String?
 )
