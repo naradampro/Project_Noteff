@@ -72,10 +72,10 @@ class NotesFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun displayRecentNotesList() {
-        viewModel.allNotes.observe(viewLifecycleOwner, {
+        viewModel.allNotes.observe(viewLifecycleOwner) {
             noteadapter.setList(it)
             noteadapter.notifyDataSetChanged()
-        })
+        }
     }
 
 }

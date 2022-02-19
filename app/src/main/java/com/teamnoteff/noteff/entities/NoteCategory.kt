@@ -13,4 +13,8 @@ class NoteCategory (
     @ColumnInfo(name = "category_name")
     val name: String,
 
-)
+){
+    override fun toString(): String {
+        return name
+    }
+}
