@@ -18,6 +18,8 @@ import com.teamnoteff.noteff.databinding.ConfirmPinFragmentBinding
 class ConfirmPinFragment : Fragment() {
     private lateinit var binding: ConfirmPinFragmentBinding
 
+    private val pinSize="^[0-9]{4}"
+
     companion object {
         fun newInstance() = ConfirmPinFragment()
     }
@@ -48,6 +50,10 @@ class ConfirmPinFragment : Fragment() {
 
             if (cPin.isEmpty()){
                 binding.cpinView.hint="empty"
+                return@setOnClickListener
+            }
+            else if (!cPin.matches(pinSize.toRegex())){
+                binding.cpinView.pinBackground
                 return@setOnClickListener
             }
 
