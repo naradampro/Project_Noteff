@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -14,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.MainActivity
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
-import com.teamnoteff.noteff.entities.Note
 import com.teamnoteff.noteff.entities.NoteCategory
 import com.teamnoteff.noteff.ui.recycler_adapters.CreateNoteDSRecyclerAdapter
+
 
 class CreateNoteFragment : Fragment() {
 
@@ -27,6 +28,7 @@ class CreateNoteFragment : Fragment() {
     private lateinit var binding: CreateNoteFragmentBinding
     private val mainViewModel: CreateNoteViewModel by activityViewModels()
     private lateinit var dsAdapter: CreateNoteDSRecyclerAdapter
+    private lateinit var categoryAdapter: ArrayAdapter<NoteCategory>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +38,11 @@ class CreateNoteFragment : Fragment() {
 
         binding.toggleButton.check(R.id.btnExisting)
 
+        categoryAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_list_item_activated_1,
+            android.R.id.text1,
+        )
 
         //Toggle group logics to select the note category
         binding.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
@@ -71,21 +78,22 @@ class CreateNoteFragment : Fragment() {
         binding.btnCreateNote.setOnClickListener {
             val title = binding.etNoteTitle.text.toString()
             val displaytext = binding.etDisplayText.text.toString()
-            val note = Note(title,displaytext)
 
-            if(binding.txtLayoutNewCategory.visibility == View.VISIBLE){
-                val categoryName = binding.txtNewCategory.text.toString()
-                val category = NoteCategory(0, categoryName)
-                mainViewModel.saveCategory(category)
-            }
-            else if(binding.textInputLayout.visibility == View.VISIBLE){
-                val categoryName = "Existing"
-            }
-            else{
-                val categoryName = "Uncategorized"
+
+            when {
+                binding.txtLayoutNewCategory.visibility == View.VISIBLE -> {
+                    val categoryName = binding.txtNewCategory.text.toString()
+                    mainViewModel.saveNoteWithNewCategory(title,displaytext,categoryName)
+                }
+                binding.textInputLayout.visibility == View.VISIBLE -> {
+                    val cat = binding.categorySelectAc.selectedItem as NoteCategory
+                    mainViewModel.saveNoteWithExistingCategory(title,displaytext,cat.id)
+                }
+                else -> {
+                    mainViewModel.saveNoteUncategorized(title,displaytext)
+                }
             }
 
-            mainViewModel.saveNote(note)
             startActivity(Intent(activity, MainActivity::class.java))
         }
 
@@ -101,6 +109,10 @@ class CreateNoteFragment : Fragment() {
             // Assign the view model to a property in the binding class
             viewModel = mainViewModel
         }
+
+        setCategoriesToSpinner()
+
+        binding.categorySelectAc.setAdapter(categoryAdapter)
 
         dsAdapter = CreateNoteDSRecyclerAdapter(mainViewModel,viewLifecycleOwner,parentFragment)
 
@@ -118,13 +130,17 @@ class CreateNoteFragment : Fragment() {
         displayDataSegmentList()
     }
 
-
-
-
     @SuppressLint("NotifyDataSetChanged")
     fun displayDataSegmentList() {
         mainViewModel.datasegments.observe(viewLifecycleOwner) {
             dsAdapter.setList(it)
+        }
+    }
+
+    //taking category objects to spinner
+    private fun setCategoriesToSpinner() {
+        mainViewModel.getAllExistingCategories().observe(viewLifecycleOwner){
+            categoryAdapter.addAll(it)
         }
     }
 

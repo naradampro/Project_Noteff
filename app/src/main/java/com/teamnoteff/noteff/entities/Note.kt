@@ -10,13 +10,16 @@ class Note (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
 
+    @ColumnInfo(name = "category_id")
+    val categoryId: Int?,
+
     @ColumnInfo(name = "title")
     val title: String,
 
     @ColumnInfo(name = "display_text")
     val displaytext: String
 ){
-    constructor(title:String,displaytext:String):this(0,title,displaytext)
-
+    constructor(categoryId: Int?,title:String,displaytext:String):this(0,categoryId,title,displaytext)
+    constructor(title:String,displaytext:String):this(0,null,title,displaytext)
     //val dataSegments:List<DataSegment>()
 }

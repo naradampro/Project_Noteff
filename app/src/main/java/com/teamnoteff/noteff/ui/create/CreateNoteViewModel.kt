@@ -1,11 +1,8 @@
 package com.teamnoteff.noteff.ui.create
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.teamnoteff.noteff.entities.*
 import com.teamnoteff.noteff.repositories.NoteCreationRepository
-import com.teamnoteff.noteff.repositories.NoteRepository
 import kotlinx.coroutines.launch
 
 class CreateNoteViewModel(
@@ -15,6 +12,10 @@ class CreateNoteViewModel(
     //data segment list
     val datasegments = MutableLiveData<ArrayList<DataSegment>>(arrayListOf())
 
+    fun getAllExistingCategories(): LiveData<List<NoteCategory>> {
+        return repository.categories.asLiveData()
+    }
+
     fun insertDataSegment(segment: DataSegment){
         datasegments.value?.add(segment)
     }
@@ -23,12 +24,27 @@ class CreateNoteViewModel(
         datasegments.value?.remove(segment)
     }
 
-    fun saveNote(note: Note) = viewModelScope.launch {
-        repository.insertNote(note)
+    fun saveNoteWithNewCategory(title: String, displaytext: String, categoryName: String) {
+        viewModelScope.launch {
+            val catId:Int = repository.insertCategory(NoteCategory(0,categoryName)).toInt()
+            val noteId:Int = repository.insertNote(Note(catId,title,displaytext)).toInt()
+            println(catId)
+            println(noteId)
+        }
     }
 
-    fun saveCategory(category: NoteCategory) = viewModelScope.launch {
-        repository.insertCategory(category)
+    fun saveNoteWithExistingCategory(title: String, displaytext: String, catId: Int) {
+        viewModelScope.launch {
+            val noteId:Int = repository.insertNote(Note(catId,title,displaytext)).toInt()
+            println(noteId)
+        }
+    }
+
+    fun saveNoteUncategorized(title: String, displaytext: String) {
+        viewModelScope.launch {
+            val noteId:Int = repository.insertNote(Note(title,displaytext)).toInt()
+            println(noteId)
+        }
     }
 
     fun updateDataSegment(index:Int,content: String){
@@ -52,7 +68,4 @@ class CreateNoteViewModel(
         }
 
     }
-
-
-
 }

@@ -8,6 +8,7 @@ import com.teamnoteff.noteff.entities.NoteCategory
 class NoteCreationRepository(private val noteDao: NoteDao, private val categoryDao: NoteCategoryDao) {
 
     val notes = noteDao.getAllNotes()
+    val categories = categoryDao.getAllCategories()
 
     suspend fun insertNote(note: Note): Long {
         return noteDao.insertNote(note)
