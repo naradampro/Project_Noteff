@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.goodiebag.pinview.Pinview
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreatePinFragmentBinding
 import com.teamnoteff.noteff.databinding.FragmentViewPagerBinding
@@ -39,6 +41,11 @@ class CreatePinFragment : Fragment() {
             viewPager?.currentItem = 1
         }
 
+       /* binding.pinView.setPinViewEventListener(object : Pinview.PinViewEventListener {
+            override fun onDataEntered(pinview: Pinview?, fromUser: Boolean) {
+                Toast.makeText(activity, pinview!!.value, Toast.LENGTH_SHORT).show()
+            }
+        })*/
 
         return binding.root
     }
