@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.NotesFragmentBinding
 import com.teamnoteff.noteff.db.NoteffDatabase
-import com.teamnoteff.noteff.repositories.NoteCreationRepository
 import com.teamnoteff.noteff.repositories.NoteRepository
 import com.teamnoteff.noteff.ui.create.CreateNoteActivity
 import com.teamnoteff.noteff.ui.recycler_adapters.ViewAllNotesRecyclerAdapter

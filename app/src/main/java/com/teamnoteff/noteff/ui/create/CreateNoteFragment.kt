@@ -140,6 +140,7 @@ class CreateNoteFragment : Fragment() {
     //taking category objects to spinner
     private fun setCategoriesToSpinner() {
         mainViewModel.getAllExistingCategories().observe(viewLifecycleOwner){
+            categoryAdapter.clear()
             categoryAdapter.addAll(it)
         }
     }

@@ -58,5 +58,6 @@
     <string name="actionContact">Contact Us</string>
     <string name="actionPrivacy">Terms and Privacy Policy</string>
     <string name="txt_uncategorized">Uncategorized</string>
+    <string name="btn_save_text">Save</string>
 
 </resources>
