@@ -20,6 +20,7 @@ class ConfirmPinFragment : Fragment() {
 
     private val pinSize="^[0-9]{4}"
 
+
     companion object {
         fun newInstance() = ConfirmPinFragment()
     }
@@ -56,6 +57,7 @@ class ConfirmPinFragment : Fragment() {
                 binding.cpinView.pinBackground
                 return@setOnClickListener
             }
+            //check whether the created pin is matched with the confirm pin
 
 
             val intent = Intent(activity, MainActivity::class.java)
