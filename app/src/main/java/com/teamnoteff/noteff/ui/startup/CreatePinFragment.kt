@@ -37,12 +37,20 @@ class CreatePinFragment : Fragment() {
         binding.btnNext.setOnClickListener {
 
 
+            val pin=binding.pinView.value.intern().trim()
+
+            if (pin.isEmpty()){
+                binding.pinView.hint="empty"
+            }
 
 
 
 
+            else{
                 viewPager?.currentItem = 3
-            
+            }
+
+
 
 
         }
