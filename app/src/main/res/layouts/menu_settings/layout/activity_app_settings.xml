@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".ui.common.AppSettingsFragment">
+    android:layout_height="match_parent"
+    tools:context=".ui.common.AppSettingsActivity"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
@@ -110,7 +110,7 @@
 
     <Button
         android:layout_marginTop="10dp"
-        android:id="@+id/btnReset"
+        android:id="@+id/btnReset1"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
@@ -120,6 +120,5 @@
         android:onClick="showAlert" />
 
 
-
-
-</LinearLayout></layout>
+</LinearLayout>
+</layout>

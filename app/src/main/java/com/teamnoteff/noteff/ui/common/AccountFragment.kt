@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.AccountFragmentBinding
 
 class AccountFragment : Fragment() {
 
+    private lateinit var binding: AccountFragmentBinding
     companion object {
         fun newInstance() = AccountFragment()
     }
@@ -23,20 +26,17 @@ class AccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.account_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.account_fragment, container, false)
 
-        val btnChangePassword: Button = view.findViewById(R.id.btnChangePassword)
-        btnChangePassword.setOnClickListener{
+        binding.btnChangePassword.setOnClickListener{
             findNavController().navigate(R.id.action_accountFragment_to_changePasswordFragment)
         }
 
-        val btnChangePin: Button = view.findViewById(R.id.btnChangePin)
-
-        btnChangePin.setOnClickListener{
+        binding.btnChangePin.setOnClickListener{
             findNavController().navigate(R.id.action_accountFragment_to_changePinFragment)
         }
 
-        return view
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

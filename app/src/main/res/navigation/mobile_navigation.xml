@@ -43,42 +43,38 @@
         tools:layout="@layout/menu_fragment" >
 
         <action
-            android:id="@+id/action_navigation_menu_to_appSettingsFragment"
-            app:destination="@id/appSettingsFragment" />
-        <action
-            android:id="@+id/action_navigation_menu_to_helpFragment"
-            app:destination="@id/helpFragment" />
-        <action
-            android:id="@+id/action_navigation_menu_to_aboutUsFragment"
-            app:destination="@id/aboutUsFragment" />
-        <action
             android:id="@+id/action_navigation_menu_to_accountActivity"
             app:destination="@id/accountActivity" />
+        <action
+            android:id="@+id/action_navigation_menu_to_appSettingsActivity"
+            app:destination="@id/appSettingsActivity" />
+        <action
+            android:id="@+id/action_navigation_menu_to_helpActivity"
+            app:destination="@id/helpActivity" />
+        <action
+            android:id="@+id/action_navigation_menu_to_aboutUsActivity"
+            app:destination="@id/aboutUsActivity" />
 
     </dialog>
 
-    <fragment
-        android:id="@+id/appSettingsFragment"
-        android:name="com.teamnoteff.noteff.ui.common.AppSettingsFragment"
-        android:label="AppSettingsFragment"
-        tools:layout="@layout/app_settings_fragment" />
-
     <include app:graph="@navigation/nav_create" />
     <include app:graph="@navigation/nav_updateview" />
-    <fragment
-        android:id="@+id/helpFragment"
-        android:name="com.teamnoteff.noteff.ui.common.HelpFragment"
-        android:label="help_fragment"
-        tools:layout="@layout/help_fragment" />
-    <fragment
-        android:id="@+id/aboutUsFragment"
-        android:name="com.teamnoteff.noteff.ui.common.AboutUsFragment"
-        android:label="about_us_fragment"
-        tools:layout="@layout/about_us_fragment" />
     <activity
         android:id="@+id/accountActivity"
         android:name="com.teamnoteff.noteff.ui.common.AccountActivity"
         android:label="activity_account"
         tools:layout="@layout/activity_account" />
+    <activity
+        android:id="@+id/appSettingsActivity"
+        android:name="com.teamnoteff.noteff.ui.common.AppSettingsActivity"
+        android:label="AppSettingsActivity" />
+    <activity
+        android:id="@+id/helpActivity"
+        android:name="com.teamnoteff.noteff.ui.common.HelpActivity"
+        android:label="HelpActivity" />
+    <activity
+        android:id="@+id/aboutUsActivity"
+        android:name="com.teamnoteff.noteff.ui.common.AboutUsActivity"
+        android:label="AboutUsActivity" />
 
 </navigation>

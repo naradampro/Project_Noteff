@@ -30,7 +30,8 @@ class MenuFragment : BottomSheetDialogFragment() {
         binding= MenuFragmentBinding.inflate(inflater,container,false)
 
         binding.btnAppSettings.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_menu_to_appSettingsFragment)
+            this.dismiss()
+            findNavController().navigate(R.id.action_navigation_menu_to_appSettingsActivity)
         }
 
         binding.btnAccount.setOnClickListener{
@@ -39,11 +40,13 @@ class MenuFragment : BottomSheetDialogFragment() {
         }
 
         binding.btnAboutUs.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_menu_to_aboutUsFragment)
+            this.dismiss()
+            findNavController().navigate(R.id.action_navigation_menu_to_aboutUsActivity)
         }
 
         binding.btnHelp.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_menu_to_helpFragment)
+            this.dismiss()
+            findNavController().navigate(R.id.action_navigation_menu_to_helpActivity)
         }
 
         return binding.root

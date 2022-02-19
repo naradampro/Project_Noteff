@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.common.AboutUsFragment"
-    android:id="@+id/main_layout">
+    tools:context=".ui.common.AboutUsActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -355,4 +354,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92" />
 
-</androidx.constraintlayout.widget.ConstraintLayout></layout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

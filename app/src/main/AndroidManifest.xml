@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Noteff">
         <activity
+            android:name=".ui.common.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.common.HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.common.AppSettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.common.AccountActivity"
             android:exported="false" />
         <activity
