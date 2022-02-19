@@ -34,6 +34,7 @@ class MenuFragment : BottomSheetDialogFragment() {
         }
 
         binding.btnAccount.setOnClickListener{
+            this.dismiss()
             findNavController().navigate(R.id.action_navigation_menu_to_accountActivity)
         }
 
