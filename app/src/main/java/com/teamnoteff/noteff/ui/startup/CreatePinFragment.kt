@@ -19,6 +19,11 @@ import com.teamnoteff.noteff.databinding.FragmentViewPagerBinding
 class CreatePinFragment : Fragment() {
     private lateinit var binding: CreatePinFragmentBinding
 
+    private val pinSize="^[0-9]{4}"
+
+
+
+
     companion object {
         fun newInstance() = CreatePinFragment()
     }
@@ -34,7 +39,29 @@ class CreatePinFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnNext.setOnClickListener {
-            viewPager?.currentItem = 3
+
+
+            val pin=binding.pinView.value.intern().trim()
+
+            if (pin.isEmpty()){
+                binding.pinView.hint="empty"
+                return@setOnClickListener
+            }
+            else if (!pin.matches(pinSize.toRegex())){
+                binding.pinView.pinBackground
+                return@setOnClickListener
+            }
+
+
+
+
+            else{
+                viewPager?.currentItem = 3
+            }
+
+
+
+
         }
 
         binding.btnBack.setOnClickListener {

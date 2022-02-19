@@ -18,6 +18,9 @@ import com.teamnoteff.noteff.databinding.ConfirmPinFragmentBinding
 class ConfirmPinFragment : Fragment() {
     private lateinit var binding: ConfirmPinFragmentBinding
 
+    private val pinSize="^[0-9]{4}"
+
+
     companion object {
         fun newInstance() = ConfirmPinFragment()
     }
@@ -33,10 +36,30 @@ class ConfirmPinFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnBack.setOnClickListener {
-            viewPager?.currentItem = 2
+
+
+                viewPager?.currentItem = 2
+
+
         }
 
+
+
         binding.btnFinish.setOnClickListener{
+
+            val cPin=binding.cpinView.value.intern().trim()
+
+            if (cPin.isEmpty()){
+                binding.cpinView.hint="empty"
+                return@setOnClickListener
+            }
+            else if (!cPin.matches(pinSize.toRegex())){
+                binding.cpinView.pinBackground
+                return@setOnClickListener
+            }
+            //check whether the created pin is matched with the confirm pin
+
+
             val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
             onBoardingFinished()
