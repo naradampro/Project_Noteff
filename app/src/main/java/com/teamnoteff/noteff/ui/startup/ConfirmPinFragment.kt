@@ -33,8 +33,22 @@ class ConfirmPinFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnBack.setOnClickListener {
-            viewPager?.currentItem = 2
+
+            //val pin=binding.pinView.value.intern().trim()
+            val cpin=binding.pinView.value.intern().trim()
+
+            if (cpin.isEmpty()){
+                binding.pinView.hint="empty"
+            }
+
+
+            else{
+                viewPager?.currentItem = 2
+            }
+
         }
+
+
 
         binding.btnFinish.setOnClickListener{
             val intent = Intent(activity, MainActivity::class.java)

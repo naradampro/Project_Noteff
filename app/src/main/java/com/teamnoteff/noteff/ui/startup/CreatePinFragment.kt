@@ -19,6 +19,7 @@ import com.teamnoteff.noteff.databinding.FragmentViewPagerBinding
 class CreatePinFragment : Fragment() {
     private lateinit var binding: CreatePinFragmentBinding
 
+
     companion object {
         fun newInstance() = CreatePinFragment()
     }
@@ -34,7 +35,16 @@ class CreatePinFragment : Fragment() {
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnNext.setOnClickListener {
-            viewPager?.currentItem = 3
+
+
+
+
+
+
+                viewPager?.currentItem = 3
+            
+
+
         }
 
         binding.btnBack.setOnClickListener {
