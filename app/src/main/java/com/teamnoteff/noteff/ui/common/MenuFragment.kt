@@ -10,6 +10,8 @@ import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.teamnoteff.noteff.R
+import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
+import com.teamnoteff.noteff.databinding.MenuFragmentBinding
 
 class MenuFragment : BottomSheetDialogFragment() {
 
@@ -18,37 +20,32 @@ class MenuFragment : BottomSheetDialogFragment() {
     }
 
     private lateinit var viewModel: MenuViewModel
+    private lateinit var binding : MenuFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //setCancelable(false)
-        val view = inflater.inflate(R.layout.menu_fragment, container, false)
 
-        val btnAppSettings: ImageButton = view.findViewById(R.id.btnAppSettings)
-        btnAppSettings.setOnClickListener{
+        binding= MenuFragmentBinding.inflate(inflater,container,false)
+
+        binding.btnAppSettings.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_menu_to_appSettingsFragment)
         }
 
-        val btnAccount: ImageButton = view.findViewById(R.id.btnAccount)
-
-        btnAccount.setOnClickListener{
+        binding.btnAccount.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_menu_to_accountActivity)
         }
 
-        val btnAboutUs: ImageButton = view.findViewById(R.id.btnAboutUs)
-        btnAboutUs.setOnClickListener{
+        binding.btnAboutUs.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_menu_to_aboutUsFragment)
         }
 
-        val btnHelp: ImageButton = view.findViewById(R.id.btnHelp)
-
-        btnHelp.setOnClickListener{
+        binding.btnHelp.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_menu_to_helpFragment)
         }
 
-        return view
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
