@@ -106,11 +106,14 @@
 
 
                         <!--Dropdown menu-->
-                        <com.google.android.material.textfield.TextInputLayout
+
+
+                        <com.google.android.material.card.MaterialCardView
                             android:id="@+id/textInputLayout"
-                            android:visibility="visible"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:padding="10dp"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="20dp"
                             android:layout_marginBottom="15dp">
@@ -120,9 +123,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:spinnerMode="dialog"/>
+                                android:spinnerMode="dialog"
+                                android:layout_gravity="center_vertical"/>
+                        </com.google.android.material.card.MaterialCardView>
 
-                        </com.google.android.material.textfield.TextInputLayout>
 
 
                             <com.google.android.material.textfield.TextInputLayout
