@@ -2,7 +2,6 @@ package com.teamnoteff.noteff.ui.common
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -78,8 +77,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        noteadapter = HomeNoteListAdapter()
-        categoryadapter = HomeRecentCategoriesRecyclerAdapter()
+        noteadapter = HomeNoteListAdapter(context)
+        categoryadapter = HomeRecentCategoriesRecyclerAdapter(context)
         initRecentNotesList()
         //testNoteQuery()
     }
@@ -104,11 +103,10 @@ class HomeFragment : Fragment() {
 
         displayRecentNotesList()
 
-        viewModel.allCategories.observe(viewLifecycleOwner, {
+        viewModel.allCategories.observe(viewLifecycleOwner) {
             categoryadapter.setList(it)
             categoryadapter.notifyDataSetChanged()
-        })
-
+        }
 
 
         //Checking Recycler Adapter with sample note objects

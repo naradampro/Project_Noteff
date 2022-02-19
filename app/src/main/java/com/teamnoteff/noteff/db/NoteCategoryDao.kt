@@ -21,4 +21,7 @@ interface NoteCategoryDao {
 
     @Query("SELECT * FROM category_table")
     fun getAllCategories():Flow<List<NoteCategory>>
+
+    @Query("SELECT * FROM category_table WHERE id=:id")
+    fun getCategoryById(id: Int): Flow<List<NoteCategory>>
 }

@@ -171,7 +171,6 @@ class CreateNoteDSRecyclerAdapter(
                 val bundle = Bundle()
                 bundle.putString("content",segment.content)
                 bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
-                println(mainViewModel.datasegments.value?.indexOf(segment)!!)
                 parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_plainTextFragment,bundle)
             }
         }

@@ -21,4 +21,7 @@ interface NoteDao {
 
     @Query("SELECT * FROM note_table")
     fun getAllNotes():Flow<List<Note>>
+
+    @Query("SELECT * FROM note_table WHERE id=:noteId")
+    fun getNoteById(noteId:Int):Flow<List<Note>>
 }

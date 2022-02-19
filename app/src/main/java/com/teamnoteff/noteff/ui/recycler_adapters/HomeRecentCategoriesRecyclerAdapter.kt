@@ -1,5 +1,6 @@
 package com.teamnoteff.noteff.ui.recycler_adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -9,7 +10,7 @@ import com.teamnoteff.noteff.databinding.RecentCategoryCardBinding
 import com.teamnoteff.noteff.entities.NoteCategory
 import java.util.*
 
-class HomeRecentCategoriesRecyclerAdapter:RecyclerView.Adapter<HomeRecentCategoriesRecyclerAdapter.ViewHolder>(){
+class HomeRecentCategoriesRecyclerAdapter(context: Context?) :RecyclerView.Adapter<HomeRecentCategoriesRecyclerAdapter.ViewHolder>(){
     private lateinit var binding: RecentCategoryCardBinding
     private val allCategoriesList = ArrayList<NoteCategory>()
 

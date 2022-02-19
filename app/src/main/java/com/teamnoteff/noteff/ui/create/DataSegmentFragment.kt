@@ -2,7 +2,6 @@ package com.teamnoteff.noteff.ui.create
 
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.DataSegmentFragmentBinding
 import com.teamnoteff.noteff.entities.ImageDataSegment
-import com.teamnoteff.noteff.entities.PlainTextDataSegment
 import dev.ronnie.github.imagepicker.ImagePicker
 import dev.ronnie.github.imagepicker.ImageResult
 
