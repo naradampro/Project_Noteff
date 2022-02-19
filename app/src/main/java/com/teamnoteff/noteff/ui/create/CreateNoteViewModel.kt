@@ -24,26 +24,58 @@ class CreateNoteViewModel(
         datasegments.value?.remove(segment)
     }
 
+    private fun saveAllDataSegments(noteId:Int){
+        datasegments.observeForever { dsList ->
+            dsList.forEach { ds ->
+                saveADataSegment(noteId,ds,dsList.indexOf(ds))
+            }
+        }
+    }
+
+    private fun saveADataSegment(noteId: Int, ds: DataSegment, indexOfDsList: Int){
+        ds.noteId = noteId
+        ds.order = indexOfDsList
+        viewModelScope.launch {
+            when (ds) {
+                is PlainTextDataSegment -> {
+                    repository.insertPlainTextDS(ds)
+                }
+                is ImportantTextDataSegment -> {
+                    repository.insertImportantTextDS(ds)
+                }
+                is PhoneNumberDataSegment -> {
+                    repository.insertPhoneNumberDS(ds)
+                }
+                is LinkDataSegment -> {
+                    repository.insertLinkDS(ds)
+                }
+                is ImageDataSegment -> {
+                    repository.insertImageDS(ds)
+                }
+            }
+        }
+    }
+
+
     fun saveNoteWithNewCategory(title: String, displaytext: String, categoryName: String) {
         viewModelScope.launch {
             val catId:Int = repository.insertCategory(NoteCategory(0,categoryName)).toInt()
             val noteId:Int = repository.insertNote(Note(catId,title,displaytext)).toInt()
-            println(catId)
-            println(noteId)
+            saveAllDataSegments(noteId)
         }
     }
 
     fun saveNoteWithExistingCategory(title: String, displaytext: String, catId: Int) {
         viewModelScope.launch {
             val noteId:Int = repository.insertNote(Note(catId,title,displaytext)).toInt()
-            println(noteId)
+            saveAllDataSegments(noteId)
         }
     }
 
     fun saveNoteUncategorized(title: String, displaytext: String) {
         viewModelScope.launch {
             val noteId:Int = repository.insertNote(Note(title,displaytext)).toInt()
-            println(noteId)
+            saveAllDataSegments(noteId)
         }
     }
 

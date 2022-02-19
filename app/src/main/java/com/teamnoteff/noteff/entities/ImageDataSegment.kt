@@ -11,9 +11,13 @@ class ImageDataSegment(
     override val id: Int,
 
     @ColumnInfo(name = "note_id")
-    override val noteId: Int,
+    override var noteId: Int,
+
+    @ColumnInfo(name = "order")
+    override var order: Int,
 
     @ColumnInfo(name = "content")
     val content: String,
-    val uri: Uri
-) : DataSegment
+) : DataSegment{
+    constructor(content: String) : this(0,0,0,content)
+}

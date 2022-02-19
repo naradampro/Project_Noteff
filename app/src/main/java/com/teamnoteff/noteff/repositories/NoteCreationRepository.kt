@@ -1,11 +1,17 @@
 package com.teamnoteff.noteff.repositories
 
-import com.teamnoteff.noteff.db.NoteCategoryDao
-import com.teamnoteff.noteff.db.NoteDao
-import com.teamnoteff.noteff.entities.Note
-import com.teamnoteff.noteff.entities.NoteCategory
+import com.teamnoteff.noteff.db.*
+import com.teamnoteff.noteff.entities.*
 
-class NoteCreationRepository(private val noteDao: NoteDao, private val categoryDao: NoteCategoryDao) {
+class NoteCreationRepository(
+    private val noteDao: NoteDao,
+    private val categoryDao: NoteCategoryDao,
+    private val plainTextDataSegmentDao: PlainTextDataSegmentDao,
+    private val importantTextDataSegmentDao: ImportantTextDataSegmentDao,
+    private val phoneNumberDataSegmentDao: PhoneNumberDataSegmentDao,
+    private val linkDataSegmentDao: LinkDataSegmentDao,
+    private val imageDataSegmentDao: ImageDataSegmentDao
+) {
 
     val notes = noteDao.getAllNotes()
     val categories = categoryDao.getAllCategories()
@@ -28,5 +34,25 @@ class NoteCreationRepository(private val noteDao: NoteDao, private val categoryD
 
     suspend fun deleteAll(note: Note):Int {
         return noteDao.deleteAll()
+    }
+
+    suspend fun insertPlainTextDS(ds: PlainTextDataSegment):Long{
+        return plainTextDataSegmentDao.insertPlainTextDataSegment(ds)
+    }
+
+    suspend fun insertImportantTextDS(ds: ImportantTextDataSegment):Long{
+        return importantTextDataSegmentDao.insertImportantTextDataSegment(ds)
+    }
+
+    suspend fun insertPhoneNumberDS(ds: PhoneNumberDataSegment):Long{
+        return phoneNumberDataSegmentDao.insertPhoneNumberDataSegment(ds)
+    }
+
+    suspend fun insertLinkDS(ds: LinkDataSegment):Long{
+        return linkDataSegmentDao.insertLinkDataSegment(ds)
+    }
+
+    suspend fun insertImageDS(ds: ImageDataSegment):Long{
+        return imageDataSegmentDao.insertImageDataSegment(ds)
     }
 }

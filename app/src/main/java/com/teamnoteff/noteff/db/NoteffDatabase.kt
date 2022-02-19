@@ -4,10 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.teamnoteff.noteff.entities.Note
-import com.teamnoteff.noteff.entities.NoteCategory
-import com.teamnoteff.noteff.entities.PlainTextDataSegment
-import com.teamnoteff.noteff.entities.UserConfig
+import com.teamnoteff.noteff.entities.*
 
 
 @Database(
@@ -16,6 +13,10 @@ import com.teamnoteff.noteff.entities.UserConfig
         Note::class,
         NoteCategory::class,
         PlainTextDataSegment::class,
+        ImportantTextDataSegment::class,
+        LinkDataSegment::class,
+        PhoneNumberDataSegment::class,
+        ImageDataSegment::class,
         UserConfig::class
     ],
     version = 1,
@@ -26,6 +27,11 @@ abstract class NoteffDatabase: RoomDatabase() {
     abstract val noteDao: NoteDao
     abstract val noteCategoryDao: NoteCategoryDao
     abstract val userConfigDao: UserConfigDao
+    abstract val plainTextDataSegmentDao: PlainTextDataSegmentDao
+    abstract val importantTextDataSegmentDao: ImportantTextDataSegmentDao
+    abstract val phoneNumberDataSegmentDao: PhoneNumberDataSegmentDao
+    abstract val linkDataSegmentDao: LinkDataSegmentDao
+    abstract val imageDataSegmentDao: ImageDataSegmentDao
 
     companion object {
         @Volatile

@@ -107,7 +107,7 @@ class DataSegmentFragment : DialogFragment() {
                 val uri = imageResult.value
 
                 //id and note id should be init later
-                val segment = ImageDataSegment(1,1,uri.toString(),uri)
+                val segment = ImageDataSegment(uri.toString())
 
                 mainViewModel.insertDataSegment(segment)
 

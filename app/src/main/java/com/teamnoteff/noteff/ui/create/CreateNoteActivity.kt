@@ -19,10 +19,17 @@ class CreateNoteActivity : AppCompatActivity() {
         title = "Create a new note"
         this.supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val noteDao = NoteffDatabase.getInstance(application).noteDao
-        val categoryDao = NoteffDatabase.getInstance(application).noteCategoryDao
+        val dbInstance = NoteffDatabase.getInstance(application)
 
-        val factory = CreateNoteViewModelFactory(NoteCreationRepository(noteDao,categoryDao))
+        val factory = CreateNoteViewModelFactory(NoteCreationRepository(
+            dbInstance.noteDao,
+            dbInstance.noteCategoryDao,
+            dbInstance.plainTextDataSegmentDao,
+            dbInstance.importantTextDataSegmentDao,
+            dbInstance.phoneNumberDataSegmentDao,
+            dbInstance.linkDataSegmentDao,
+            dbInstance.imageDataSegmentDao,
+        ))
 
         mainViewModel = ViewModelProvider(this,factory)[CreateNoteViewModel::class.java]
     }

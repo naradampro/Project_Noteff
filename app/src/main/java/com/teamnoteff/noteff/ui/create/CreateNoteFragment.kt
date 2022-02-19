@@ -112,7 +112,7 @@ class CreateNoteFragment : Fragment() {
 
         setCategoriesToSpinner()
 
-        binding.categorySelectAc.setAdapter(categoryAdapter)
+        binding.categorySelectAc.adapter = categoryAdapter
 
         dsAdapter = CreateNoteDSRecyclerAdapter(mainViewModel,viewLifecycleOwner,parentFragment)
 

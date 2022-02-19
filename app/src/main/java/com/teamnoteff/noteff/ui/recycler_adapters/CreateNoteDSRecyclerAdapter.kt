@@ -1,6 +1,7 @@
 package com.teamnoteff.noteff.ui.recycler_adapters
 
 import android.annotation.SuppressLint
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.*
 import com.teamnoteff.noteff.entities.*
 import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
+import java.net.URI
 
 
 class CreateNoteDSRecyclerAdapter(
@@ -195,7 +197,7 @@ class CreateNoteDSRecyclerAdapter(
 
     inner class ImageViewHolder(val binding: DsrvcardRemoveImageBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(segment: ImageDataSegment) {
-            binding.imageview.setImageURI(segment.uri)
+            binding.imageview.setImageURI(Uri.parse(segment.content))
 
             binding.btnDelete.setOnClickListener {
                 deleteSegment(segment)

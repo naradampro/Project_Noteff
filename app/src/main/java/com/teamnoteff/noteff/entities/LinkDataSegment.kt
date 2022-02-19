@@ -10,10 +10,13 @@ class LinkDataSegment(
     override val id: Int,
 
     @ColumnInfo(name = "note_id")
-    override val noteId: Int,
+    override var noteId: Int,
+
+    @ColumnInfo(name = "order")
+    override var order: Int,
 
     @ColumnInfo(name = "content")
     var content:String
 ) : DataSegment{
-    constructor(content: String) : this(0,0,content)
+    constructor(content: String) : this(0,0,0,content)
 }
