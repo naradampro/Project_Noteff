@@ -1,9 +1,11 @@
 package com.teamnoteff.noteff.ui.create.dsadd
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.teamnoteff.noteff.databinding.DsaddLinkFragmentBinding
@@ -57,16 +59,25 @@ class LinkFragment : DialogFragment() {
     private fun addSegmentToRecyclerView(){
         val content = binding.etNoteTitle.text.toString()
 
-        //id and note id should be init later
-        val segment = LinkDataSegment(content)
+        if(content.isEmpty()){
+            binding.etNoteTitle.error="This field can not be empty"
 
-        mainViewModel.insertDataSegment(segment)
+        }
+        else if(!Patterns.WEB_URL.matcher(content).matches()){
+            binding.etNoteTitle.error="Enter valid URL"
+        }
+        else{
+            //id and note id should be init later
+            val segment = LinkDataSegment(content)
 
-        //invoking the parent fragment's functions to update recycler view
-        val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
-        ps.displayDataSegmentList()
+            mainViewModel.insertDataSegment(segment)
 
-        dismiss()
+            //invoking the parent fragment's functions to update recycler view
+            val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+            ps.displayDataSegmentList()
+
+            dismiss()
+        }
     }
 
     private fun updateSegmentToRecyclerView(index:Int){
