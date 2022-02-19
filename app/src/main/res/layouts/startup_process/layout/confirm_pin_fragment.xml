@@ -52,6 +52,7 @@
             android:layout_marginTop="10dp"/>
 
         <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cursorVisible="false"
@@ -60,7 +61,7 @@
             app:pinBackground="@drawable/ic_pin_view"
             app:pinHeight="30dp"
             app:pinLength="4"
-            app:pinWidth="30dp"/>
+            app:pinWidth="30dp" />
 
     </LinearLayout>
 
