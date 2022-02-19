@@ -17,7 +17,9 @@ import java.util.regex.Pattern
 
 class SetPasswordFragment : Fragment() {
 
-    private val textPattern = "[A-Za-z]"
+    private val passwordCharacters="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\\\\\/%§\"&“|`´}{°><:.;#')(@_\$\"!?*=^-]).{8,}\$"
+
+
 
     private lateinit var binding: SetPasswordFragmentBinding
     companion object {
@@ -32,33 +34,53 @@ class SetPasswordFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.set_password_fragment, container, false)
 
+
+
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+
+
+
 
         binding.btnNext.setOnClickListener {
 
             //validate confirm password
 
-            val password = binding.etNPwdText.text.toString()
-            val confirmpassword = binding.etCNPwdText.text.toString()
 
-            if (password.isEmpty()) {
-                binding.etNPwdText.error = "Password Required"
-                return@setOnClickListener
-            }
-            else if(!password.matches(textPattern.toRegex())){
-                binding.etNPwdText.error = "Incorrect Password"
-            }
 
-            else if (confirmpassword.isEmpty()) {
-                binding.etCNPwdText.error = "Password Required"
-                return@setOnClickListener
-            }
-            else if(!confirmpassword.matches(textPattern.toRegex())){
-                binding.etCNPwdText.error = "Incorrect Password"
+
+            val password = binding.etNPwdText.text.toString().trim()
+            val cPassword = binding.etCNPwdText.text.toString().trim()
+
+            if (password.isEmpty()){
+                binding.etNPwdText.error="Password is required"
                 return@setOnClickListener
             }
 
-            viewPager?.currentItem = 2
+            else if (!password.matches(passwordCharacters.toRegex())){
+                binding.etNPwdText.error="Password Characters are not matching"
+            }
+
+
+
+            if (cPassword.isEmpty()){
+                binding.etCNPwdText.error="Confirm your password"
+                return@setOnClickListener
+            }
+            else if (password!=cPassword){
+                binding.etCNPwdText.error="Password does not match"
+            }
+
+
+
+
+
+
+            else{
+                viewPager?.currentItem = 2
+            }
+
+
+
         }
 
         binding.btnBack.setOnClickListener {
