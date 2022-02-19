@@ -19,6 +19,10 @@ import com.teamnoteff.noteff.databinding.FragmentViewPagerBinding
 class CreatePinFragment : Fragment() {
     private lateinit var binding: CreatePinFragmentBinding
 
+    private val pinSize="^[0-9]{4}"
+
+
+
 
     companion object {
         fun newInstance() = CreatePinFragment()
@@ -41,6 +45,11 @@ class CreatePinFragment : Fragment() {
 
             if (pin.isEmpty()){
                 binding.pinView.hint="empty"
+                return@setOnClickListener
+            }
+            else if (!pin.matches(pinSize.toRegex())){
+                binding.pinView.pinBackground
+                return@setOnClickListener
             }
 
 

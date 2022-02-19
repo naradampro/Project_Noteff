@@ -34,12 +34,21 @@ class ConfirmPinFragment : Fragment() {
 
         binding.btnBack.setOnClickListener {
 
+            val cPin=binding.pinView.value.intern().trim()
+
+            if (cPin.isEmpty()){
+                binding.pinView.hint="empty"
+                return@setOnClickListener
+            }
 
 
 
-
+            else{
                 viewPager?.currentItem = 2
-            
+            }
+
+
+
 
         }
 
