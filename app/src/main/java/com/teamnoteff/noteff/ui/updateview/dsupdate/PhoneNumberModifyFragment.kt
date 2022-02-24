@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.teamnoteff.noteff.databinding.DsaddPhoneNumberFragmentBinding
 import com.teamnoteff.noteff.entities.PhoneNumberDataSegment
 import com.teamnoteff.noteff.ui.create.CreateNoteFragment
+import com.teamnoteff.noteff.ui.updateview.ModifyOrRemoveFragment
 import com.teamnoteff.noteff.ui.updateview.UpdateViewViewModel
 
 class PhoneNumberModifyFragment : DialogFragment() {
@@ -68,7 +69,7 @@ class PhoneNumberModifyFragment : DialogFragment() {
             mainViewModel.insertDataSegment(segment)
 
             //invoking the parent fragment's functions to update recycler view
-            val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+            val ps = requireParentFragment().childFragmentManager?.fragments[0] as ModifyOrRemoveFragment
             ps.displayDataSegmentList()
 
             dismiss()
@@ -79,7 +80,7 @@ class PhoneNumberModifyFragment : DialogFragment() {
         val content = binding.etNoteTitle.text.toString()
         mainViewModel.updateDataSegment(index,content)
         //invoking the parent fragment's functions to update recycler view
-        val ps = requireParentFragment().childFragmentManager?.fragments[0] as CreateNoteFragment
+        val ps = requireParentFragment().childFragmentManager?.fragments[0] as ModifyOrRemoveFragment
         ps.displayDataSegmentList()
 
         dismiss()

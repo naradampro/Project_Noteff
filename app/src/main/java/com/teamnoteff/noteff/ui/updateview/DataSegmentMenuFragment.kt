@@ -104,7 +104,7 @@ class DataSegmentMenuFragment : DialogFragment() {
                 mainViewModel.insertDataSegment(segment)
 
                 //invoking the parent fragment's functions to update recycler view
-                val ps = requireParentFragment().childFragmentManager?.fragments[0] as UpdateViewActivity
+                val ps = requireParentFragment().childFragmentManager?.fragments[0] as ModifyOrRemoveFragment
                 //ps.displayDataSegmentList()
 
                 dismiss()

@@ -155,7 +155,7 @@ class ModifyNoteDSRecyclerAdapter(
                 bundle.putString("content",segment.content)
                 bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
                 println(mainViewModel.datasegments.value?.indexOf(segment)!!)
-                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_importantTextFragment,bundle)
+                parentFragment!!.findNavController().navigate(R.id.action_modifyOrRemoveFragment_to_importantTextModifyFragment,bundle)
             }
         }
     }
@@ -172,7 +172,7 @@ class ModifyNoteDSRecyclerAdapter(
                 val bundle = Bundle()
                 bundle.putString("content",segment.content)
                 bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
-                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_plainTextFragment,bundle)
+                parentFragment!!.findNavController().navigate(R.id.action_modifyOrRemoveFragment_to_phoneNumberModifyFragment,bundle)
             }
         }
     }
@@ -190,7 +190,7 @@ class ModifyNoteDSRecyclerAdapter(
                 bundle.putString("content",segment.content)
                 bundle.putInt("index", mainViewModel.datasegments.value?.indexOf(segment)!!)
                 println(mainViewModel.datasegments.value?.indexOf(segment)!!)
-                parentFragment!!.findNavController().navigate(R.id.action_createNoteFragment_to_plainTextFragment,bundle)
+                parentFragment!!.findNavController().navigate(R.id.action_modifyOrRemoveFragment_to_linkModifyFragment,bundle)
             }
         }
     }
