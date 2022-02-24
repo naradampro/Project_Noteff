@@ -23,5 +23,5 @@ interface PlainTextDataSegmentDao {
     fun getAllPlainTextDataSegments():Flow<List<PlainTextDataSegment>>
 
     @Query("SELECT * FROM plaintext_data_segment_table WHERE note_id =:noteId")
-    fun getDSByNoteId(noteId:Int):Flow<List<PlainTextDataSegment>>
+    fun getDSListByNoteId(noteId:Int):Flow<List<PlainTextDataSegment>>
 }

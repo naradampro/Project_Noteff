@@ -21,4 +21,7 @@ interface ImageDataSegmentDao {
 
     @Query("SELECT * FROM image_data_segment_table")
     fun getAllImageDataSegments():Flow<List<ImageDataSegment>>
+
+    @Query("SELECT * FROM image_data_segment_table WHERE note_id=:noteId")
+    fun getDSListByNoteId(noteId: Int): Flow<List<ImageDataSegment>>
 }

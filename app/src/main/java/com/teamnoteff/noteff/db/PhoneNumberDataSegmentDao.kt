@@ -21,4 +21,7 @@ interface PhoneNumberDataSegmentDao {
 
     @Query("SELECT * FROM phonenumber_data_segment_table")
     fun getAllPhoneNumberDataSegments():Flow<List<PhoneNumberDataSegment>>
+
+    @Query("SELECT * FROM phonenumber_data_segment_table WHERE note_id=:noteId")
+    fun getDSListByNoteId(noteId: Int): Flow<List<PhoneNumberDataSegment>>
 }

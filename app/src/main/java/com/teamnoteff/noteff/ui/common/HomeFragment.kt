@@ -83,6 +83,7 @@ class HomeFragment : Fragment() {
         //testNoteQuery()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun initRecentNotesList(){
 
         binding.recentNotesList.apply {
@@ -108,44 +109,13 @@ class HomeFragment : Fragment() {
             categoryadapter.notifyDataSetChanged()
         }
 
-
-        //Checking Recycler Adapter with sample note objects
-        /*val sampleNotes: List<Note> = listOf(
-            Note(1,"Note 01","Note one display test."),
-            Note(2,"Note 02","Note two display test."),
-            Note(3,"Note 03","Note three display test."),
-            Note(4,"Note 04","Note four display test.")
-        )
-
-        noteadapter.setList(sampleNotes)*/
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun displayRecentNotesList() {
-        viewModel.allNotes.observe(viewLifecycleOwner, {
+        viewModel.allNotes.observe(viewLifecycleOwner) {
             noteadapter.setList(it)
             noteadapter.notifyDataSetChanged()
-        })
-    }
-
-    @Suppress("unused")
-    private fun createSampleNotes(){
-        val noteDao = NoteffDatabase.getInstance(requireActivity().application).noteDao
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            noteDao.insertNote(Note(1,"Note 01","Note one display test."))
-            noteDao.insertNote(Note(2,"Note 02","Note two display test."))
-            noteDao.insertNote(Note(3,"Note 03","Note three display test."))
-        }
-    }
-
-    @Suppress("unused")
-    private fun testNoteQuery(){
-        viewModel.allNotes.observe(viewLifecycleOwner){ notes ->
-            for (note in notes){
-                Log.i("","${note.id}\t${note.title}\t${note.displaytext}")
-            }
         }
     }
 

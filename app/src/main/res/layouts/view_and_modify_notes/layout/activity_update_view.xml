@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:singleSelection="true"
-        android:layout_gravity="right"
+        app:selectionRequired="true"
+        android:layout_gravity="end"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="10dp">
 
@@ -24,28 +25,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/btnModify"
-            style="?attr/materialButtonOutlinedStyle"
             android:backgroundTint="#F2F2F2"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modify_remove"
-            android:textSize="14dp"
-            android:textAllCaps="false"/>
+            android:textSize="14sp"
+            android:textAllCaps="false" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fcv_view_modify"
+        android:id="@+id/fcv_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_modify"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_updateview" />
+        app:navGraph="@navigation/nav_modify_note"
+        android:visibility="gone"/>
 
 </LinearLayout>
 

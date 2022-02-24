@@ -21,4 +21,7 @@ interface ImportantTextDataSegmentDao {
 
     @Query("SELECT * FROM importanttext_data_segment_table")
     fun getAllImportantTextDataSegments():Flow<List<ImportantTextDataSegment>>
+
+    @Query("SELECT * FROM importanttext_data_segment_table WHERE note_id=:noteId")
+    fun getDSListByNoteId(noteId: Int): Flow<List<ImportantTextDataSegment>>
 }

@@ -58,7 +58,6 @@
     </dialog>
 
     <include app:graph="@navigation/nav_create" />
-    <include app:graph="@navigation/nav_updateview" />
     <activity
         android:id="@+id/accountActivity"
         android:name="com.teamnoteff.noteff.ui.common.AccountActivity"

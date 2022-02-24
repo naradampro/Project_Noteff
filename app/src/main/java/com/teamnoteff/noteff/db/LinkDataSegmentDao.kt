@@ -20,4 +20,7 @@ interface LinkDataSegmentDao {
 
     @Query("SELECT*FROM link_data_segment_table")
     fun getAllLinkDataSegments():Flow<List<LinkDataSegment>>
+
+    @Query("SELECT*FROM link_data_segment_table WHERE note_id=:noteId")
+    fun getDSListByNoteId(noteId: Int): Flow<List<LinkDataSegment>>
 }
