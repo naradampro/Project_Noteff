@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.NotesFragmentBinding
 import com.teamnoteff.noteff.db.NoteffDatabase
 import com.teamnoteff.noteff.repositories.NoteRepository
@@ -31,7 +29,7 @@ class NotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= DataBindingUtil.inflate(inflater,R.layout.notes_fragment,container,false)
+        binding= NotesFragmentBinding.inflate(inflater,container,false)
 
         binding.floatingActionButton.setOnClickListener {
             val intent = Intent(activity, CreateNoteActivity::class.java)
@@ -52,7 +50,7 @@ class NotesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        noteadapter = ViewAllNotesRecyclerAdapter()
+        noteadapter = ViewAllNotesRecyclerAdapter(context)
         initRecentNotesList()
     }
 
@@ -71,10 +69,10 @@ class NotesFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun displayRecentNotesList() {
-        viewModel.allNotes.observe(viewLifecycleOwner, {
+        viewModel.allNotes.observe(viewLifecycleOwner) {
             noteadapter.setList(it)
             noteadapter.notifyDataSetChanged()
-        })
+        }
     }
 
 }

@@ -51,11 +51,11 @@ class CategoriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoriesAdapter = ViewAllCategoriesRecyclerAdapter()
-        initRecentNotesList()
+        categoriesAdapter = ViewAllCategoriesRecyclerAdapter(requireContext())
+        initAllCategoriesList()
     }
 
-    private fun initRecentNotesList(){
+    private fun initAllCategoriesList(){
 
         binding.allCategoriesList.apply {
             // set a LinearLayoutManager to handle Android
@@ -68,12 +68,10 @@ class CategoriesFragment : Fragment() {
         displayRecentNotesList()
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     private fun displayRecentNotesList() {
-        viewModel.allCategories.observe(viewLifecycleOwner, {
+        viewModel.allCategories.observe(viewLifecycleOwner) {
             categoriesAdapter.setList(it)
-            categoriesAdapter.notifyDataSetChanged()
-        })
+        }
     }
 
     @Suppress("unused")

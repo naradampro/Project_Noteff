@@ -1,124 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.updateview.ViewFragment">
+    tools:context=".ui.create.CreateNoteFragment">
+
 
     <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp">
-
-            <Button
-                android:id="@+id/btnView"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btnModify"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Modify / Remove"
-                android:textAllCaps="false" />
-
-     </LinearLayout>
-
-    <!--<com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:singleSelection="true"
-        android:layout_gravity="right"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/btnExisting"
-            style="?attr/materialButtonOutlinedStyle"
-            android:backgroundTint="#F2F2F2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view"
-            android:textSize="14dp"
-            android:textAllCaps="false"/>
-
-        <Button
-            android:id="@+id/btnNew"
-            style="?attr/materialButtonOutlinedStyle"
-            android:backgroundTint="#F2F2F2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modify_remove"
-            android:textSize="14dp"
-            android:textAllCaps="false"/>
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>-->
-
-    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="430dp"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
-
-            <include layout="@layout/modify_main_card"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/viewRecyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:clipToPadding="false"
-                    android:nestedScrollingEnabled="false"
-                    android:paddingBottom="15dp" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/addDS"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:text="@string/add_a_data_segment"
-        android:textAllCaps="false"
-        android:textColor="@color/blue_default"
-        app:strokeColor="@color/blue_default"
-        app:strokeWidth="1.5dp"
-        android:layout_gravity="right"
-        android:backgroundTint="#ffffff"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"/>
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="@string/save"
-        android:backgroundTint="@color/blue_default"
-        android:textColor="#ffffff"
-        android:textAlignment="center"/>
+        android:layout_above="@+id/bottom_bar"
+        android:layout_alignParentTop="true">
 
-</LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/modify_note_top_panel"
+                    layout="@layout/modify_main_card"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/viewRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="15dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey_v2">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnAddDS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#ffffff"
+            android:text="@string/add_a_data_segment"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_default"
+            app:strokeColor="@color/blue_default"
+            app:strokeWidth="1.5dp"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnCreateNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="@color/blue_default"
+            android:text="@string/btn_save_text"
+            android:textAlignment="center"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+</RelativeLayout></layout>

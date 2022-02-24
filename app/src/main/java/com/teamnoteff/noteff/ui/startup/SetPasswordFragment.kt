@@ -13,14 +13,20 @@ import androidx.viewpager2.widget.ViewPager2
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.SetPasswordFragmentBinding
 import com.teamnoteff.noteff.databinding.WelcomeFragmentBinding
+import java.util.regex.Pattern
 
 class SetPasswordFragment : Fragment() {
+
+    private val passwordCharacters="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\\\\\/%§\"&“|`´}{°><:.;#')(@_\$\"!?*=^-]).{8,}\$"
+
+
+
     private lateinit var binding: SetPasswordFragmentBinding
     companion object {
         fun newInstance() = SetPasswordFragment()
     }
 
-    private lateinit var viewModel: SetPasswordViewModel
+    //private lateinit var viewModel: SetPasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +34,53 @@ class SetPasswordFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.set_password_fragment, container, false)
 
+
+
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
+
+
+
         binding.btnNext.setOnClickListener {
-            viewPager?.currentItem = 2
+
+            //validate confirm password
+
+
+
+
+            val password = binding.etNPwdText.text.toString().trim()
+            val cPassword = binding.etCNPwdText.text.toString().trim()
+
+            if (password.isEmpty()){
+                binding.etNPwdText.error="Password is required"
+                return@setOnClickListener
+            }
+
+            else if (!password.matches(passwordCharacters.toRegex())){
+                binding.etNPwdText.error="Password Characters are not matching"
+            }
+
+
+
+            if (cPassword.isEmpty()){
+                binding.etCNPwdText.error="Confirm your password"
+                return@setOnClickListener
+            }
+            else if (password!=cPassword){
+                binding.etCNPwdText.error="Password does not match"
+            }
+
+
+
+
+
+
+            else{
+                viewPager?.currentItem = 2
+            }
+
+
+
         }
 
         binding.btnBack.setOnClickListener {
@@ -39,11 +88,4 @@ class SetPasswordFragment : Fragment() {
         }
         return binding.root
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[SetPasswordViewModel::class.java]
-        // TODO: Use the ViewModel
-    }
-
 }

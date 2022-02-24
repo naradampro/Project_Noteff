@@ -87,24 +87,38 @@
                 android:layout_marginStart="10dp"/>
 
             <Button
-                android:id="@+id/btnViewAll_one"
+                android:id="@+id/btnViewAll_categories"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View All"
-                android:textSize="11sp"
-                android:textAllCaps="false"
-                android:layout_centerVertical="true"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="#9B9B9B"
-                android:textColor="#9B9B9B"
-                app:icon="@drawable/ic_arrow_drop_down"
-                app:iconTint="#9B9B9B"
-                app:iconGravity="end"
-                android:backgroundTint="#ffffff"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"/>
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#ffffff"
+                android:text="View All"
+                android:textAllCaps="false"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp"
+                app:icon="@drawable/ic_arrow_drop_down"
+                app:iconGravity="end"
+                app:iconTint="#9B9B9B"
+                app:strokeColor="#9B9B9B" />
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recent_category_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:scrollbarStyle="outsideOverlay" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -127,21 +141,21 @@
                 android:layout_marginStart="10dp"/>
 
             <Button
-                android:id="@+id/btnViewAll_two"
+                android:id="@+id/btnViewAll_notes"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View All"
-                android:textSize="11dp"
-                android:textAllCaps="false"
-                android:layout_centerVertical="true"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="#9B9B9B"
-                android:textColor="#9B9B9B"
-                app:icon="@drawable/ic_arrow_drop_down"
-                app:iconTint="#9B9B9B"
-                app:iconGravity="end"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"/>
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="View All"
+                android:textAllCaps="false"
+                android:textColor="#9B9B9B"
+                android:textSize="11dp"
+                app:icon="@drawable/ic_arrow_drop_down"
+                app:iconGravity="end"
+                app:iconTint="#9B9B9B"
+                app:strokeColor="#9B9B9B" />
 
         </RelativeLayout>
 

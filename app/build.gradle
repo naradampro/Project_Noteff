@@ -86,4 +86,6 @@ dependencies {
     implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
     //ViewPager
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    //ImagePicker
+    implementation 'com.github.ronnieotieno:Ronnie-Image-Picker:1.1.0'
 }

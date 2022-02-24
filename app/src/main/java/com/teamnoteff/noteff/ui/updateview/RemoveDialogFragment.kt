@@ -14,7 +14,6 @@ class RemoveDialogFragment : DialogFragment() {
         fun newInstance() = RemoveDialogFragment()
     }
 
-    private lateinit var viewModel: RemoveDialogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +24,7 @@ class RemoveDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[RemoveDialogViewModel::class.java]
+
         // TODO: Use the ViewModel
     }
 

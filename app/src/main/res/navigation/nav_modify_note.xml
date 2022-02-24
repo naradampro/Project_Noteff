@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_modify_note"
+    app:startDestination="@id/modifyOrRemoveFragment">
+
+    <dialog
+        android:id="@+id/plainTextModifyFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.dsupdate.PlainTextModifyFragment"
+        android:label="PlainTextModifyFragment" />
+    <dialog
+        android:id="@+id/importantTextModifyFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.dsupdate.ImportantTextModifyFragment"
+        android:label="ImportantTextModifyFragment" />
+    <dialog
+        android:id="@+id/phoneNumberModifyFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.dsupdate.PhoneNumberModifyFragment"
+        android:label="PhoneNumberModifyFragment" />
+    <dialog
+        android:id="@+id/linkModifyFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.dsupdate.LinkModifyFragment"
+        android:label="LinkModifyFragment" />
+    <dialog
+        android:id="@+id/dataSegmentMenuFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.DataSegmentMenuFragment"
+        android:label="DataSegmentMenuFragment" >
+        <action
+            android:id="@+id/action_dataSegmentMenuFragment_to_phoneNumberModifyFragment"
+            app:destination="@id/phoneNumberModifyFragment" />
+        <action
+            android:id="@+id/action_dataSegmentMenuFragment_to_importantTextModifyFragment"
+            app:destination="@id/importantTextModifyFragment" />
+        <action
+            android:id="@+id/action_dataSegmentMenuFragment_to_plainTextModifyFragment"
+            app:destination="@id/plainTextModifyFragment" />
+        <action
+            android:id="@+id/action_dataSegmentMenuFragment_to_linkModifyFragment"
+            app:destination="@id/linkModifyFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/modifyOrRemoveFragment"
+        android:name="com.teamnoteff.noteff.ui.updateview.ModifyOrRemoveFragment"
+        android:label="ModifyOrRemoveFragment" >
+        <action
+            android:id="@+id/action_modifyOrRemoveFragment_to_dataSegmentMenuFragment"
+            app:destination="@id/dataSegmentMenuFragment" />
+        <action
+            android:id="@+id/action_modifyOrRemoveFragment_to_phoneNumberModifyFragment"
+            app:destination="@id/phoneNumberModifyFragment" />
+        <action
+            android:id="@+id/action_modifyOrRemoveFragment_to_importantTextModifyFragment"
+            app:destination="@id/importantTextModifyFragment" />
+        <action
+            android:id="@+id/action_modifyOrRemoveFragment_to_plainTextModifyFragment"
+            app:destination="@id/plainTextModifyFragment" />
+        <action
+            android:id="@+id/action_modifyOrRemoveFragment_to_linkModifyFragment"
+            app:destination="@id/linkModifyFragment" />
+    </fragment>
+</navigation>
