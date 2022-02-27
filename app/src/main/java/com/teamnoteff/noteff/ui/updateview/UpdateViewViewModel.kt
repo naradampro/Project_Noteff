@@ -10,14 +10,31 @@ class UpdateViewViewModel(
     private val noteId: Int
 ): ViewModel() {
     //data segment list
-    val datasegments = MutableLiveData<ArrayList<DataSegment>>(arrayListOf())
+    val datasegments = MediatorLiveData<ArrayList<DataSegment>>()
 
     fun sortDSList(){
         datasegments.value?.sortBy { it.order }
     }
 
-    fun addDSToList(list: List<DataSegment>){
-        datasegments.value?.addAll(list)
+    fun setDSList(){
+        datasegments.apply {
+            addSource(viewPlainTextDS()){
+                this.value = it as ArrayList<DataSegment>?
+            }
+            addSource(viewImportantTextDS()){
+                this.value = it as ArrayList<DataSegment>?
+            }
+            addSource(viewPhoneNumberDS()){
+                this.value = it as ArrayList<DataSegment>?
+            }
+            addSource(viewLinkDS()){
+                this.value = it as ArrayList<DataSegment>?
+            }
+            addSource(viewImageDS()){
+                this.value = it as ArrayList<DataSegment>?
+            }
+        }
+        println("View Model data set size ${datasegments.value?.size}")
     }
 
     fun clearDSList(){
@@ -28,32 +45,27 @@ class UpdateViewViewModel(
         return datasegments
     }
 
-    fun viewPlainTextDS(noteId: Int): LiveData<List<DataSegment>> {
+    private fun viewPlainTextDS(): LiveData<List<DataSegment>> {
         return repository.getPlainTextDSList(noteId).asLiveData()
     }
 
-    fun viewImportantTextDS(noteId: Int): LiveData<List<DataSegment>> {
+    private fun viewImportantTextDS(): LiveData<List<DataSegment>> {
         return repository.getImportantTextDSList(noteId).asLiveData()
     }
 
-    fun viewPhoneNumberDS(noteId: Int): LiveData<List<DataSegment>> {
+    private fun viewPhoneNumberDS(): LiveData<List<DataSegment>> {
         return repository.getPhoneNUmberDSList(noteId).asLiveData()
     }
 
-    fun viewLinkDS(noteId: Int): LiveData<List<DataSegment>> {
+    private fun viewLinkDS(): LiveData<List<DataSegment>> {
         return repository.getLinkDSList(noteId).asLiveData()
     }
 
-    fun viewImageDS(noteId: Int): LiveData<List<DataSegment>> {
+    private fun viewImageDS(): LiveData<List<DataSegment>> {
         return repository.getImageDSList(noteId).asLiveData()
     }
 
-
-    fun getNoteId(): Int {
-        return noteId
-    }
-
-    fun getNoteById(noteId: Int): LiveData<List<Note>> {
+    fun getNoteById(): LiveData<List<Note>> {
         return repository.getNoteDataCore(noteId).asLiveData()
     }
 
@@ -70,7 +82,7 @@ class UpdateViewViewModel(
     }
 
     fun removeDataSegment(segment: DataSegment){
-        datasegments.value?.remove(segment)
+        datasegments.value!!.remove(segment)
     }
 
     private fun saveAllDataSegments(noteId:Int){

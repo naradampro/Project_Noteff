@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.ViewFragmentBinding
+import com.teamnoteff.noteff.entities.DataSegment
 import com.teamnoteff.noteff.ui.recycler_adapters.ViewNoteDSRecyclerAdapter
 
 class ViewFragment : Fragment() {
@@ -28,7 +29,7 @@ class ViewFragment : Fragment() {
     ): View {
         binding = ViewFragmentBinding.inflate(layoutInflater)
 
-        mainViewModel.getNoteById(mainViewModel.getNoteId()).observe(viewLifecycleOwner){note->
+        mainViewModel.getNoteById().observe(viewLifecycleOwner){note->
             binding.viewNoteTopPanel.apply {
                 txtTitle.text = note[0].title
                 txtDisplay.text = note[0].displaytext
@@ -48,7 +49,9 @@ class ViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dsAdapter = ViewNoteDSRecyclerAdapter(mainViewModel,viewLifecycleOwner,parentFragment)
-        initDataSegmnetsList()
+        if(savedInstanceState == null){
+            initDataSegmnetsList()
+        }
         println("Alert(Item count view DS adapter):"+dsAdapter.itemCount)
     }
 
@@ -61,8 +64,9 @@ class ViewFragment : Fragment() {
     }
 
     fun displayDataSegmentList() {
-        mainViewModel.datasegments.observe(viewLifecycleOwner) {
+        mainViewModel.getDataSegments().observe(viewLifecycleOwner){
             dsAdapter.setList(it)
         }
+
     }
 }
