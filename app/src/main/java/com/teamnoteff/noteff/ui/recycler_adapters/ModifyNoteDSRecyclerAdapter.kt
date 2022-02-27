@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.*
 import com.teamnoteff.noteff.entities.*
-import com.teamnoteff.noteff.ui.create.CreateNoteViewModel
 import com.teamnoteff.noteff.ui.updateview.UpdateViewViewModel
-import java.net.URI
 
 
 class ModifyNoteDSRecyclerAdapter(
@@ -60,9 +58,9 @@ class ModifyNoteDSRecyclerAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList() {
+    fun setList(list: ArrayList<DataSegment>) {
         datasegments.clear()
-        mainViewModel.getDataSegments().value?.let { this.datasegments.addAll(it)}
+        datasegments.addAll(list)
         notifyDataSetChanged()
     }
 
@@ -120,7 +118,7 @@ class ModifyNoteDSRecyclerAdapter(
     private fun deleteSegment(segment: DataSegment){
         mainViewModel.removeDataSegment(segment)
         mainViewModel.datasegments.observe(viewLifecycleOwner) {
-            setList()
+            setList(it)
         }
     }
 

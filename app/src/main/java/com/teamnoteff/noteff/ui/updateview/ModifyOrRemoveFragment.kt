@@ -1,21 +1,19 @@
 package com.teamnoteff.noteff.ui.updateview
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnoteff.noteff.R
 import com.teamnoteff.noteff.databinding.CreateNoteFragmentBinding
+import com.teamnoteff.noteff.entities.DataSegment
 import com.teamnoteff.noteff.entities.NoteCategory
-import com.teamnoteff.noteff.ui.create.DataSegmentFragment
 import com.teamnoteff.noteff.ui.recycler_adapters.ModifyNoteDSRecyclerAdapter
 
 
@@ -37,7 +35,7 @@ class ModifyOrRemoveFragment : Fragment() {
         binding = CreateNoteFragmentBinding.inflate(layoutInflater)
         binding.btnCreateNote.text = "SAVE"
 
-        mainViewModel.getNoteById(mainViewModel.getNoteId()).observe(viewLifecycleOwner){note->
+        mainViewModel.getNoteById().observe(viewLifecycleOwner){note->
             binding.etNoteTitle.setText(note[0].title)
             binding.etDisplayText.setText(note[0].displaytext)
             if(note[0].categoryId==null){
@@ -110,13 +108,14 @@ class ModifyOrRemoveFragment : Fragment() {
 
 
     fun displayDataSegmentList() {
-        mainViewModel.datasegments.observe(viewLifecycleOwner) {
-            dsAdapter.setList()
+        mainViewModel.getDataSegments().observe(viewLifecycleOwner){
+            dsAdapter.setList(it)
         }
     }
 
     //taking category objects to spinner
     private fun setCategoriesToSpinner() {
+        mainViewModel.setDSList()
         mainViewModel.getAllExistingCategories().observe(viewLifecycleOwner){
             categoryAdapter.clear()
             categoryAdapter.addAll(it)

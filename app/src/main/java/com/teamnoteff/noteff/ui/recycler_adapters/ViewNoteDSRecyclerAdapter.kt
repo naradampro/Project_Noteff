@@ -51,6 +51,14 @@ class ViewNoteDSRecyclerAdapter(
         }
     }
 
+    fun getDSList(): ArrayList<DataSegment> {
+        return datasegments
+    }
+
+    fun sortDSList(){
+        datasegments.sortBy { it.order }
+    }
+
     override fun getItemCount(): Int {
         return datasegments.size
     }
